@@ -111,9 +111,9 @@ with for_stats:
 
 st.subheader('Stats against selected teams')
 against_header_columns = st.columns(3)
-against_header_columns[0].write("Home")
+against_header_columns[0].write(home_team)
 against_header_columns[1].write("vs")
-against_header_columns[2].write("Away")
+against_header_columns[2].write(away_team)
 against_stats = st.container()
 with against_stats:
     against_columns = st.columns(3)
