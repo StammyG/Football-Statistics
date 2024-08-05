@@ -10,7 +10,7 @@ import pandas as pd
 
 st.title('StammyApp')
 
-db_csv = "C:/Users/StammyG/Documents/Top_Leagues.csv"
+db_csv = "Top_Leagues.csv"
 
 
 @st.cache_data
