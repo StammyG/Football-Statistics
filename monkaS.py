@@ -63,18 +63,9 @@ venues = away_filtered_data['Venue'].unique()
 venue = st.sidebar.multiselect('Select Venue for Away Team', options=venues,)
 venue_away_filtered_data = away_filtered_data [away_filtered_data['Venue'].isin(venue)]
 
-tab1, tab2 = st.tabs(["Home Data", "Away Data"])
+tab1, tab2, tab3 = st.tabs(['Team Stats',"Home Data" ,"Away Data"])
 
-with tab1:
-    st.write("Home Data")
-    st.dataframe(venue_home_filtered_data)
-
-with tab2:
-    st.write("Away Data")
-    st.dataframe(venue_away_filtered_data)
-
-
-
+with tab1
 st.title('Selected Teams Stats')
 for_filtered_data = venue_home_filtered_data[venue_home_filtered_data["ForAgainst"] == "For"]
 against_filtered_data = venue_home_filtered_data[venue_home_filtered_data["ForAgainst"] == "Against"]
@@ -131,4 +122,12 @@ with against_stats:
     write_stat_to_container(against_columns, "Offsides", "Offsides", True)
     write_stat_to_container(against_columns, "Yellow Cards", "Yellow_Cards", True)
     write_stat_to_container(against_columns, "xG", "xG", True)
-    
+
+
+with tab2:
+    st.write("Home Data")
+    st.dataframe(venue_home_filtered_data)
+
+with tab3:
+    st.write("Away Data")
+    st.dataframe(venue_away_filtered_data)
