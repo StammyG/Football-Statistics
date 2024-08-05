@@ -93,9 +93,9 @@ def write_stat_to_container(columns_, title, csv_stat, is_against):
 st.subheader('Stats for selected teams')
 
 header_columns = st.columns(3)
-header_columns[0].write("Home")
+header_columns[0].write(home_team)
 header_columns[1].write("vs")
-header_columns[2].write("Away")
+header_columns[2].write(away_team)
 
 for_stats = st.container()
 with for_stats:
