@@ -25,7 +25,7 @@ st.sidebar.header('Filter Options')
 
 
 competitions = st.sidebar.multiselect(
-    'Select Competitions', options=data['Competition'].unique(), default=data['Competition'].unique(), key='competition'
+    'Select Competitions', options=data['Competition'].unique(),  default=[], key='competition'
 )
 competition_filtered_data = data[data['Competition'].isin(competitions)]
 
