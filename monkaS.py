@@ -82,8 +82,8 @@ def write_mean_stat_to_columns(stat, column, selected_data):
 
 
 def write_stat_to_container(columns_, title, csv_stat, is_against):
-    home_data = venue_home_filtered_data if not is_against else against_filtered_data
-    away_data = venue_away_filtered_data if not is_against else against_away_filtered_data
+    home_data = for_filtered_data if not is_against else against_filtered_data
+    away_data = for_away_filtered_data if not is_against else against_away_filtered_data
     col1_, col2_, col3_ = columns_
     write_mean_stat_to_columns(csv_stat, col1_, home_data)
     col2_.write(title)
