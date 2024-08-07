@@ -158,12 +158,12 @@ with tab2:
     for_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "For"]
     against_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "Against"]
 
-    st.header("Stats for selected teams")
+    st.subheader("Stats for selected teams")
 
     col7, col8, col9 = st.columns(3)
     with col7:
         st.subheader(home_team)
-        
+        st.subheader(for_filtered_YellowCards_Data['Yellow_Cards'].mean)
 
     with col8:
         st.subheader("VS")
@@ -172,7 +172,7 @@ with tab2:
         st.subheader(away_team)
 
 
-    st.header("Stats against selected teams")
+    st.subheader("Stats against selected teams")
     col10, col11, col12 = st.columns(3)
     with col10:
         st.subheader(home_team)
