@@ -128,18 +128,18 @@ with tab2:
     competition_filtered_YellowCards_Data = YellowCards_Data[YellowCards_Data['Competition'].isin(competitions)]
 
     seasons = competition_filtered_YellowCards_Data['Season'].unique()
-    season = st.selectbox('Select Season', options=seasons)
-    season_filtered_YellowCards_Data = competition_filtered_YellowCards_Data[competition_filtered_YellowCards_Data['Season'] == season]
+    season = st.selectbox('Select Season', options=seasons,key = "Season_Cards")
+    season_filtered_YellowCards_Data = competition_filtered_YellowCards_Data[competition_filtered_YellowCards_Data['Season'] == season,]
 
     home_team = st.selectbox('Select Home Team', options=season_filtered_YellowCards_Data['Team'].unique())
     filtered_YellowCards_Data = season_filtered_YellowCards_Data[season_filtered_YellowCards_Data['Team'] == home_team]
     opponents = st.multiselect(
-        'Select Opponents', options=filtered_YellowCards_Data['Opponent'].unique(), default=filtered_YellowCards_Data['Opponent'].unique()
+        'Select Opponents', options=filtered_YellowCards_Data['Opponent'].unique(), default=filtered_YellowCards_Data['Opponent'].unique(), key = "Home_Opponent_Cards"
     )
     filtered_YellowCards_Data = filtered_YellowCards_Data[filtered_YellowCards_Data['Opponent'].isin(opponents)]
 
     venues = filtered_YellowCards_Data['Venue'].unique()
-    venue = st.multiselect('Select Venue for Home Team', options=venues)
+    venue = st.multiselect('Select Venue for Home Team', options=venues, key="Home_Venue_Cards")
     venue_filtered_YellowCards_Data = filtered_YellowCards_Data[filtered_YellowCards_Data['Venue'].isin(venue)]
 
     away_team = st.selectbox('Select Away Team', options=season_filtered_YellowCards_Data['Team'].unique())
@@ -149,7 +149,7 @@ with tab2:
     away_filtered_YellowCards_Data = away_filtered_YellowCards_Data[away_filtered_YellowCards_Data['Opponent'].isin(away_opponents)]
 
     venues = away_filtered_YellowCards_Data['Venue'].unique()
-    venue_away = st.multiselect('Select Venue for Away Team', options=venues)
+    venue_away = st.multiselect('Select Venue for Away Team', options=venues,key="Away_Venue_Cards")
     venue_away_filtered_YellowCards_Data = away_filtered_YellowCards_Data[away_filtered_YellowCards_Data['Venue'].isin(venue_away)]
 
  
