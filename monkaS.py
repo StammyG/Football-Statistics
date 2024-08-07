@@ -57,7 +57,9 @@ with tab1:
     venue = st.multiselect('Select Venue for Away Team', options=venues)
     venue_away_filtered_data = away_filtered_data[away_filtered_data['Venue'].isin(venue)]
 
-    st.subheader('Results for Selected Teams Stats')
+    st.markdown(
+    "<h2 style='color: red;'>Team Stats for selected Teams</h2>",
+    unsafe_allow_html=True
     for_filtered_data = venue_home_filtered_data[venue_home_filtered_data["ForAgainst"] == "For"]
     against_filtered_data = venue_home_filtered_data[venue_home_filtered_data["ForAgainst"] == "Against"]
     for_away_filtered_data = venue_away_filtered_data[venue_away_filtered_data["ForAgainst"] == "For"]
@@ -75,7 +77,9 @@ with tab1:
         col2_.write(title)
         write_mean_stat_to_columns(csv_stat, col3_, away_data)
 
-    st.subheader('Stats for selected teams')
+    st.markdown(
+    "<h2 style='color: red;'>Stats for selected teams</h2>",
+    unsafe_allow_html=True
 
     header_columns = st.columns(3)
     header_columns[0].write(home_team)
@@ -95,7 +99,7 @@ with tab1:
         write_stat_to_container(columns, "xG", "xG", False)
 
     st.markdown(
-    "<h2 style='color: red;'>Stats for selected teams</h2>",
+    "<h2 style='color: red;'>Stats against selected teams</h2>",
     unsafe_allow_html=True
 )
     against_header_columns = st.columns(3)
