@@ -160,7 +160,9 @@ with tab2:
 
 
 
-    League_Average_YellowCards = season_filtered_YellowCards_Data["Yellow_Cards"].mean()
+    League_Average_YellowCards1 = season_filtered_YellowCards_Data.groupby('foragainst')['Yellow_Cards'].mean().reset_index()
+    League_Average_YellowCards = League_Average_YellowCards1['Yellow_Cards'].sum()
+
     League_Average_RedCards = competition_filtered_YellowCards_Data["Red_Cards"].mean()
     
     def write_mean_stat_to_columns_2(stat, column, selected_data):
