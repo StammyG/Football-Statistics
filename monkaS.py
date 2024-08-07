@@ -165,9 +165,9 @@ with tab2:
         home_data = for_filtered_YellowCards_Data if not is_against else against_filtered_YellowCards_Data
         away_data = for_away_filtered_YellowCards_Data if not is_against else against_away_filtered_YellowCards_Data
         col1_, col2_, col3_ = columns_
-        write_mean_stat_to_columns(csv_stat, col1_, home_data)
+        write_mean_stat_to_columns_2(csv_stat, col1_, home_data)
         col2_.write(title)
-        write_mean_stat_to_columns(csv_stat, col3_, away_data)
+        write_mean_stat_to_columns_2(csv_stat, col3_, away_data)
 
     
 
@@ -179,7 +179,7 @@ with tab2:
     for_stats = st.container()
     with for_stats:
         columns = st.columns(3)
-        write_stat_to_container(columns, "Yellow Cards", "Yellow_Cards", False)
+        write_stat_to_container_2(columns, "Yellow Cards", "Yellow_Cards", False)
         
     
     st.subheader('Stats against selected teams')
@@ -190,7 +190,7 @@ with tab2:
     against_stats = st.container()
     with against_stats:
         against_columns = st.columns(3)
-        write_stat_to_container(against_columns, "Yellow Cards", "Yellow_Cards", True)
+        write_stat_to_container_2(against_columns, "Yellow Cards", "Yellow_Cards", True)
         
 
     
