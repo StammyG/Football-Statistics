@@ -218,7 +218,7 @@ with tab2:
 
     with tab2_2:
         st.write("Away Data")
-        st.dataframe(season_filtered_YellowCards_Data)
+        st.dataframe(League_Average_YellowCards1)
 
 
 
