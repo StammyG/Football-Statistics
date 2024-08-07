@@ -180,6 +180,7 @@ with tab2:
     with for_stats:
         columns = st.columns(3)
         write_stat_to_container_2(columns, "Yellow Cards", "Yellow_Cards", False)
+        write_stat_to_container_2(columns, "Red Cards, 'Red_Cards', False)
         
     
     st.subheader('Stats against selected teams')
@@ -191,6 +192,7 @@ with tab2:
     with against_stats:
         against_columns = st.columns(3)
         write_stat_to_container_2(against_columns, "Yellow Cards", "Yellow_Cards", True)
+        write_stat_to_container_2(against_columns, "Red_Cards", "Red_Cards", True)
         
 
     
