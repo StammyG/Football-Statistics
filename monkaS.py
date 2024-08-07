@@ -160,7 +160,7 @@ with tab2:
 
 
 
-    League_Average_YellowCards1 = season_filtered_YellowCards_Data.groupby('foragainst')['Yellow_Cards'].mean().reset_index()
+    League_Average_YellowCards1 = season_filtered_YellowCards_Data.groupby('ForAgainst')['Yellow_Cards'].mean().reset_index()
     League_Average_YellowCards = League_Average_YellowCards1['Yellow_Cards'].sum()
 
     League_Average_RedCards = competition_filtered_YellowCards_Data["Red_Cards"].mean()
