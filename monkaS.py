@@ -157,6 +157,12 @@ with tab2:
     against_filtered_YellowCards_Data = venue_filtered_YellowCards_Data[venue_filtered_YellowCards_Data["ForAgainst"] == "Against"]
     for_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "For"]
     against_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "Against"]
+
+
+
+    League_Average_YellowCards = competition_filtered_YellowCards_Data["Yellow_Cards"].mean()
+    League_Average_RedCards = competition_filtered_YellowCards_Data["Red_Cards"].mean()
+    
     def write_mean_stat_to_columns_2(stat, column, selected_data):
         stat_mean = selected_data[stat].mean()
         column.write(f"{stat_mean:.1f}")
@@ -193,6 +199,8 @@ with tab2:
         against_columns = st.columns(3)
         write_stat_to_container_2(against_columns, "Yellow Cards", "Yellow_Cards", True)
         write_stat_to_container_2(against_columns, "Red Cards", "Red_Cards", True)
+
+    st.write(f"{League_Average_YellowCards:.1f}")
         
 
     
