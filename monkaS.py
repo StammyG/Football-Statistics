@@ -173,6 +173,16 @@ with tab2:
 
 
     st.header("Stats against selected teams")
+    col10, col11, col12 = st.columns(3)
+    with col10:
+        st.subheader(home_team)
+
+    with col11:
+        st.subheader("VS")
+
+    with col12:
+        st.subheader(away_team)
+
 
 
 
