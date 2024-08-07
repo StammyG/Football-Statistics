@@ -144,7 +144,7 @@ with tab2:
 
     away_team = st.selectbox('Select Away Team', options=season_filtered_YellowCards_Data['Team'].unique())
     away_filtered_YellowCards_Data = season_filtered_YellowCards_Data[season_filtered_YellowCards_Data['Team'] == away_team]
-    away_opponents = st.multiselect('Select Opponents', options=away_filtered_YellowCards_Data['Opponent'].unique(), default=away_filtered_YellowCards_Data['Opponent'].unique(), key='away_opponents'
+    away_opponents = st.multiselect('Select Opponents', options=away_filtered_YellowCards_Data['Opponent'].unique(), default=away_filtered_YellowCards_Data['Opponent'].unique(), key='away_opponents_cards'
     )
     away_filtered_YellowCards_Data = away_filtered_YellowCards_Data[away_filtered_YellowCards_Data['Opponent'].isin(away_opponents)]
 
