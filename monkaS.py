@@ -157,9 +157,28 @@ with tab2:
     against_filtered_YellowCards_Data = venue_filtered_YellowCards_Data[venue_filtered_YellowCards_Data["ForAgainst"] == "Against"]
     for_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "For"]
     against_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "Against"]
+    
+    
+    
+    
+    
+    
+    tab2_1, tab2_2 = st.tabs(["Home Data", "Away Data"])
+
+    with tab2_1:
+        st.write("Home Data")
+        st.dataframe(venue_filtered_YellowCards_Data)
+
+    with tab2_2:
+        st.write("Away Data")
+        st.dataframe(venue_away_filtered_YellowCards_Data)
+
+
+
 
 
    
+
 
     
     
