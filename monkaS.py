@@ -178,7 +178,6 @@ with tab2:
         write_mean_stat_to_columns_2(csv_stat, col3_, away_data)
 
         
-    st.subheader("League Average Yelow Cards: "  f"{League_Average_YellowCards:.1f}")
 
 
     
@@ -206,7 +205,8 @@ with tab2:
         write_stat_to_container_2(against_columns, "Yellow Cards", "Yellow_Cards", True)
         write_stat_to_container_2(against_columns, "Red Cards", "Red_Cards", True)
 
-        
+
+    st.write(("League Average Yelow Cards: "  f"{League_Average_YellowCards:.1f}"))
 
     
     
