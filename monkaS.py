@@ -131,7 +131,7 @@ with tab2:
     season = st.selectbox('Select Season', options=seasons,key = "Season_Cards")
     season_filtered_YellowCards_Data = competition_filtered_YellowCards_Data[competition_filtered_YellowCards_Data['Season'] == season,]
 
-    home_team = st.selectbox('Select Home Team', options=season_filtered_YellowCards_Data['Team'].unique())
+    home_team = st.selectbox('Select Home Team', options=season_filtered_YellowCards_Data['Team'].unique(),key="Home_Team_Cards")
     filtered_YellowCards_Data = season_filtered_YellowCards_Data[season_filtered_YellowCards_Data['Team'] == home_team]
     opponents = st.multiselect(
         'Select Opponents', options=filtered_YellowCards_Data['Opponent'].unique(), default=filtered_YellowCards_Data['Opponent'].unique(), key = "Home_Opponent_Cards"
@@ -142,7 +142,7 @@ with tab2:
     venue = st.multiselect('Select Venue for Home Team', options=venues, key="Home_Venue_Cards")
     venue_filtered_YellowCards_Data = filtered_YellowCards_Data[filtered_YellowCards_Data['Venue'].isin(venue)]
 
-    away_team = st.selectbox('Select Away Team', options=season_filtered_YellowCards_Data['Team'].unique())
+    away_team = st.selectbox('Select Away Team', options=season_filtered_YellowCards_Data['Team'].unique(),key="Away_Team_Cards")
     away_filtered_YellowCards_Data = season_filtered_YellowCards_Data[season_filtered_YellowCards_Data['Team'] == away_team]
     away_opponents = st.multiselect('Select Opponents', options=away_filtered_YellowCards_Data['Opponent'].unique(), default=away_filtered_YellowCards_Data['Opponent'].unique(), key='away_opponents_cards'
     )
