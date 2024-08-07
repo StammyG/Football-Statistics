@@ -21,8 +21,10 @@ def load_data(file_path):
 data = load_data(db_csv)
 data['Season']=data['Season'].astype(str)
 
-st.sidebar.header('Filter Options')
+tab1, tab2 = st.tabs(["Team Stats", "Different Filters"])
 
+with tab1: 
+    st.sidebar.header('Filter Options')
 
 competitions = st.sidebar.multiselect(
     'Select Competitions', options=data['Competition'].unique(),  default=[], key='competition'
@@ -127,12 +129,17 @@ with against_stats:
     write_stat_to_container(against_columns, "xG", "xG", True)
 
 
-tab1, tab2 = st.tabs(["Home Data", "Away Data"])
+ tab1_1, tab1_2 = st.tabs(["Home Data", "Away Data"])
 
-with tab1:
+with tab1_1:
     st.write("Home Data")
     st.dataframe(venue_home_filtered_data)
 
-with tab2:
+with tab1_2
     st.write("Away Data")
     st.dataframe(venue_away_filtered_data)
+
+
+with tab2:
+    st.sidebar.header('Filter Options')
+    
