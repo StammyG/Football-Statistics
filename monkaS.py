@@ -21,7 +21,7 @@ def load_data(file_path):
 data = load_data(db_csv)
 data['Season']=data['Season'].astype(str)
 
-tab1, tab2 = st.tabs(["Team Stats", "Different Filters"])
+tab1, tab2 = st.tabs(["Team Stats", "Yellow Cards"])
 
 with tab1: 
     st.sidebar.header('Filter Options')
