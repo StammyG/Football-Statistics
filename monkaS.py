@@ -202,7 +202,7 @@ with tab2:
         write_stat_to_container_2(against_columns, "Yellow Cards", "Yellow_Cards", True)
         write_stat_to_container_2(against_columns, "Red Cards", "Red_Cards", True)
 
-    st.subheader({competitions} "Average Yelow Cards for" {seasons} ": " f"{League_Average_YellowCards:.1f}")
+    st.subheader({competitions} + "Average Yelow Cards for" + {seasons} ": " f"{League_Average_YellowCards:.1f}")
         
 
     
