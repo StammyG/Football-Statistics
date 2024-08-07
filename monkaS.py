@@ -94,7 +94,10 @@ with tab1:
         write_stat_to_container(columns, "Yellow Cards", "Yellow_Cards", False)
         write_stat_to_container(columns, "xG", "xG", False)
 
-    st.subheader('Stats against selected teams')
+    st.markdown(
+    "<h2 style='color: red;'>Stats for selected teams</h2>",
+    unsafe_allow_html=True
+)
     against_header_columns = st.columns(3)
     against_header_columns[0].write(home_team)
     against_header_columns[1].write("vs")
