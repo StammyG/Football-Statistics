@@ -4,7 +4,6 @@ Created on Fri Aug  2 17:14:06 2024
 
 @author: StammyG
 """
-
 import streamlit as st
 import pandas as pd
 
@@ -19,49 +18,46 @@ def load_data(file_path):
 data = load_data(db_csv)
 data['Season'] = data['Season'].astype(str)
 
-tab1, tab2 = st.tabs(["Team Stats", "Different Filters"])
+# Create tabs
+tab1, tab2 = st.tabs(["Team Stats for Top 5", "Yellow Cards for Leagues outside the Top 5"])
 
 with tab1:
     st.header('Filter Options')
 
     competitions = st.multiselect(
-        'Select Competitions', options=data['Competition'].unique(), default=[], key='competition'
+        'Select Competitions', options=data['Competition'].unique(), default=[]
     )
     competition_filtered_data = data[data['Competition'].isin(competitions)]
 
-    # Sidebar - Season selection
     seasons = competition_filtered_data['Season'].unique()
-    season = st.selectbox('Select Season', options=seasons, key='season')
-    Season_Filtered_data = competition_filtered_data[competition_filtered_data['Season'] == season]
+    season = st.selectbox('Select Season', options=seasons)
+    season_filtered_data = competition_filtered_data[competition_filtered_data['Season'] == season]
 
-    home_team = st.selectbox('Select Home Team', options=Season_Filtered_data['Team'].unique())
-    filtered_data = Season_Filtered_data[Season_Filtered_data['Team'].isin([home_team])]
+    home_team = st.selectbox('Select Home Team', options=season_filtered_data['Team'].unique())
+    filtered_data = season_filtered_data[season_filtered_data['Team'] == home_team]
     opponents = st.multiselect(
         'Select Opponents', options=filtered_data['Opponent'].unique(), default=filtered_data['Opponent'].unique()
     )
     filtered_data = filtered_data[filtered_data['Opponent'].isin(opponents)]
 
     venues = filtered_data['Venue'].unique()
-    venue = st.multiselect('Select Venue for Home Team', options=venues, key='venue')
-    venue_home_filtered_data = filtered_data[filtered_data['Venue'].isin(venue)]
+    venue = st.multiselect('Select Venue for Home Team', options=venues)
+    venue_filtered_data = filtered_data[filtered_data['Venue'].isin(venue)]
 
-    away_team = st.selectbox('Select Away Team', options=Season_Filtered_data['Team'].unique())
-    away_filtered_data = Season_Filtered_data[Season_Filtered_data['Team'].isin([away_team])]
+    away_team = st.selectbox('Select Away Team', options=season_filtered_data['Team'].unique())
+    away_filtered_data = season_filtered_data[season_filtered_data['Team'] == away_team]
     away_opponents = st.multiselect(
-        'Select Opponents', options=away_filtered_data['Opponent'].unique(), default=away_filtered_data['Opponent'].unique(),
-        key='away_team'
+        'Select Opponents', options=away_filtered_data['Opponent'].unique(), default=away_filtered_data['Opponent'].unique()
     )
     away_filtered_data = away_filtered_data[away_filtered_data['Opponent'].isin(away_opponents)]
 
     venues = away_filtered_data['Venue'].unique()
-    venue = st.multiselect('Select Venue for Away Team', options=venues)
-    venue_away_filtered_data = away_filtered_data[away_filtered_data['Venue'].isin(venue)]
+    venue_away = st.multiselect('Select Venue for Away Team', options=venues)
+    venue_away_filtered_data = away_filtered_data[away_filtered_data['Venue'].isin(venue_away)]
 
-    st.markdown(
-    "<h2 style='color: red;'>Team Stats for selected Teams</h2>",
-    unsafe_allow_html=True)
-    for_filtered_data = venue_home_filtered_data[venue_home_filtered_data["ForAgainst"] == "For"]
-    against_filtered_data = venue_home_filtered_data[venue_home_filtered_data["ForAgainst"] == "Against"]
+    st.subheader('Selected Teams Stats')
+    for_filtered_data = venue_filtered_data[venue_filtered_data["ForAgainst"] == "For"]
+    against_filtered_data = venue_filtered_data[venue_filtered_data["ForAgainst"] == "Against"]
     for_away_filtered_data = venue_away_filtered_data[venue_away_filtered_data["ForAgainst"] == "For"]
     against_away_filtered_data = venue_away_filtered_data[venue_away_filtered_data["ForAgainst"] == "Against"]
 
@@ -77,9 +73,7 @@ with tab1:
         col2_.write(title)
         write_mean_stat_to_columns(csv_stat, col3_, away_data)
 
-     st.subheader('Stats for selected teams')
-    
-
+    st.subheader('Stats for selected teams')
     header_columns = st.columns(3)
     header_columns[0].write(home_team)
     header_columns[1].write("vs")
@@ -97,7 +91,7 @@ with tab1:
         write_stat_to_container(columns, "Yellow Cards", "Yellow_Cards", False)
         write_stat_to_container(columns, "xG", "xG", False)
 
-     st.subheader('Stats against selected teams')    
+    st.subheader('Stats against selected teams')
     against_header_columns = st.columns(3)
     against_header_columns[0].write(home_team)
     against_header_columns[1].write("vs")
@@ -118,14 +112,17 @@ with tab1:
 
     with tab1_1:
         st.write("Home Data")
-        st.dataframe(venue_home_filtered_data)
+        st.dataframe(venue_filtered_data)
 
     with tab1_2:
         st.write("Away Data")
         st.dataframe(venue_away_filtered_data)
 
-if tab2:
-    st.sidebar.header('Filter Options')
+with tab2:
+    st.write("Yellow Cards for Leagues outside the Top 5")
+
+   
+
     
     
 
