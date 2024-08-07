@@ -122,6 +122,7 @@ with tab1:
         st.dataframe(venue_away_filtered_data)
 
 with tab2:
-    st.write("Different Filters")
+    st.write("Yellow Cards")
+    
 
    
