@@ -163,7 +163,7 @@ with tab2:
         st.header(home_team)
 
     with col8:
-        st.header(VS)
+        st.header("VS")
 
     with col9:
         st.header(away_team)
