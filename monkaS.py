@@ -129,7 +129,7 @@ with tab2:
 
     seasons = competition_filtered_YellowCards_Data['Season'].unique()
     season = st.selectbox('Select Season', options=seasons,key = "Season_Cards")
-    season_filtered_YellowCards_Data = competition_filtered_YellowCards_Data[competition_filtered_YellowCards_Data['Season'] == season,]
+    season_filtered_YellowCards_Data = competition_filtered_YellowCards_Data[competition_filtered_YellowCards_Data['Season'] == season]
 
     home_team = st.selectbox('Select Home Team', options=season_filtered_YellowCards_Data['Team'].unique(),key="Home_Team_Cards")
     filtered_YellowCards_Data = season_filtered_YellowCards_Data[season_filtered_YellowCards_Data['Team'] == home_team]
