@@ -160,7 +160,7 @@ with tab2:
 
 
 
-    League_Average_YellowCards = competition_filtered_YellowCards_Data["Yellow_Cards"].mean()
+    League_Average_YellowCards = season_filtered_YellowCards_Data["Yellow_Cards"].mean()
     League_Average_RedCards = competition_filtered_YellowCards_Data["Red_Cards"].mean()
     
     def write_mean_stat_to_columns_2(stat, column, selected_data):
