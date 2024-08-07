@@ -46,7 +46,7 @@ with tab1:
 
     away_team = st.selectbox('Select Away Team', options=season_filtered_data['Team'].unique())
     away_filtered_data = season_filtered_data[season_filtered_data['Team'] == away_team]
-    away_opponents = st.multiselect('Select Opponents', options=away_filtered_data['Opponent'].unique(), default=away_filtered_data['Opponent'].unique()
+    away_opponents = st.multiselect('Select Opponents', options=away_filtered_data['Opponent'].unique(), default=away_filtered_data['Opponent'].unique(), key='away_opponents'
     )
     away_filtered_data = away_filtered_data[away_filtered_data['Opponent'].isin(away_opponents)]
 
