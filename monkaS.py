@@ -16,8 +16,9 @@ def load_data(file_path):
     return pd.read_csv(file_path, delimiter=";")
 
 data = load_data(db_csv)
+YellowCards_Data = pd.read_csv("SusLeagues_Cards.csv")
 data['Season'] = data['Season'].astype(str)
-
+YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
 # Create tabs
 tab1, tab2 = st.tabs(["Team Stats for Top 5", "Yellow Cards for Leagues outside the Top 5"])
 
@@ -72,6 +73,11 @@ with tab1:
         col2_.write(title)
         write_mean_stat_to_columns(csv_stat, col3_, away_data)
 
+    st.markdown(
+    "<div style='margin-bottom: 30px;'></div>",
+    unsafe_allow_html=True
+)
+
     st.subheader('Stats for selected teams')
     header_columns = st.columns(3)
     header_columns[0].write(home_team)
@@ -89,7 +95,7 @@ with tab1:
         write_stat_to_container(columns, "Offsides", "Offsides", False)
         write_stat_to_container(columns, "Yellow Cards", "Yellow_Cards", False)
         write_stat_to_container(columns, "xG", "xG", False)
-
+    
     st.subheader('Stats against selected teams')
     against_header_columns = st.columns(3)
     against_header_columns[0].write(home_team)
@@ -118,7 +124,7 @@ with tab1:
         st.dataframe(venue_away_filtered_data)
 
 with tab2:
-    st.write("Yellow Cards for Leagues outside the Top 5")
+    st.header('Filter Options')
 
    
 
