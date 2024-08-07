@@ -57,7 +57,7 @@ with tab1:
     venue = st.multiselect('Select Venue for Away Team', options=venues)
     venue_away_filtered_data = away_filtered_data[away_filtered_data['Venue'].isin(venue)]
 
-    st.subheader('Selected Teams Stats')
+    st.subheader('Results for Selected Teams Stats')
     for_filtered_data = venue_home_filtered_data[venue_home_filtered_data["ForAgainst"] == "For"]
     against_filtered_data = venue_home_filtered_data[venue_home_filtered_data["ForAgainst"] == "Against"]
     for_away_filtered_data = venue_away_filtered_data[venue_away_filtered_data["ForAgainst"] == "For"]
