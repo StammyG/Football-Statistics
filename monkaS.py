@@ -73,10 +73,7 @@ with tab1:
         col2_.write(title)
         write_mean_stat_to_columns(csv_stat, col3_, away_data)
 
-    st.markdown(
-    "<div style='margin-bottom: 30px;'></div>",
-    unsafe_allow_html=True
-)
+    
 
     st.subheader('Stats for selected teams')
     header_columns = st.columns(3)
@@ -125,6 +122,42 @@ with tab1:
 
 with tab2:
     st.header('Filter Options')
+    competitions = st.multiselect(
+        'Select Competitions', options=YellowCards_Data['Competition'].unique(), default=[]
+    )
+    competition_filtered_YellowCards_Data = YellowCards_Data[YellowCards_Data['Competition'].isin(competitions)]
+
+    seasons = competition_filtered_YellowCards_Data['Season'].unique()
+    season = st.selectbox('Select Season', options=seasons)
+    season_filtered_YellowCards_Data = competition_filtered_YellowCards_Data[competition_filtered_YellowCards_Data['Season'] == season]
+
+    home_team = st.selectbox('Select Home Team', options=season_filtered_YellowCards_Data['Team'].unique())
+    filtered_YellowCards_Data = season_filtered_YellowCards_Data[season_filtered_YellowCards_Data['Team'] == home_team]
+    opponents = st.multiselect(
+        'Select Opponents', options=filtered_YellowCards_Data['Opponent'].unique(), default=filtered_YellowCards_Data['Opponent'].unique()
+    )
+    filtered_YellowCards_Data = filtered_YellowCards_Data[filtered_YellowCards_Data['Opponent'].isin(opponents)]
+
+    venues = filtered_YellowCards_Data['Venue'].unique()
+    venue = st.multiselect('Select Venue for Home Team', options=venues)
+    venue_filtered_YellowCards_Data = filtered_YellowCards_Data[filtered_YellowCards_Data['Venue'].isin(venue)]
+
+    away_team = st.selectbox('Select Away Team', options=season_filtered_YellowCards_Data['Team'].unique())
+    away_filtered_YellowCards_Data = season_filtered_YellowCards_Data[season_filtered_YellowCards_Data['Team'] == away_team]
+    away_opponents = st.multiselect('Select Opponents', options=away_filtered_YellowCards_Data['Opponent'].unique(), default=away_filtered_YellowCards_Data['Opponent'].unique(), key='away_opponents'
+    )
+    away_filtered_YellowCards_Data = away_filtered_YellowCards_Data[away_filtered_YellowCards_Data['Opponent'].isin(away_opponents)]
+
+    venues = away_filtered_YellowCards_Data['Venue'].unique()
+    venue_away = st.multiselect('Select Venue for Away Team', options=venues)
+    venue_away_filtered_YellowCards_Data = away_filtered_YellowCards_Data[away_filtered_YellowCards_Data['Venue'].isin(venue_away)]
+
+ 
+    for_filtered_YellowCards_Data = venue_filtered_YellowCards_Data[venue_filtered_YellowCards_Data["ForAgainst"] == "For"]
+    against_filtered_YellowCards_Data = venue_filtered_data[venue_filtered_YellowCards_Data["ForAgainst"] == "Against"]
+    for_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "For"]
+    against_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "Against"]
+
 
    
 
