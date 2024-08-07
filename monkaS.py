@@ -163,7 +163,7 @@ with tab2:
     col7, col8, col9 = st.columns(3)
     with col7:
         st.subheader(home_team)
-        st.subheader(for_filtered_YellowCards_Data['Yellow_Cards'].mean)
+        st.subheader(for_filtered_YellowCards_Data['Yellow_Cards'].mean())
 
     with col8:
         st.subheader("VS")
