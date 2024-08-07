@@ -21,7 +21,7 @@ data['Season'] = data['Season'].astype(str)
 
 tab1, tab2 = st.tabs(["Team Stats", "Different Filters"])
 
-with tab1:
+if tab1:
     st.sidebar.header('Filter Options')
 
     competitions = st.sidebar.multiselect(
@@ -121,8 +121,9 @@ with tab1:
         st.write("Away Data")
         st.dataframe(venue_away_filtered_data)
 
-with tab2:
+if tab2:
     st.sidebar.header('Filter Options')
+    
     
 
    
