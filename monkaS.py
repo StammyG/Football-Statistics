@@ -157,7 +157,23 @@ with tab2:
     against_filtered_YellowCards_Data = venue_filtered_YellowCards_Data[venue_filtered_YellowCards_Data["ForAgainst"] == "Against"]
     for_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "For"]
     against_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "Against"]
+
+    col7, col8, col9 = st.columns(3)
+    with col7:
+        st.header(home_team)
+
+    with col8:
+        st.header(VS)
+
+    with col9:
+        st.header(away_team)
+
+
+
+
     
+
+
     
     
     
