@@ -157,38 +157,41 @@ with tab2:
     against_filtered_YellowCards_Data = venue_filtered_YellowCards_Data[venue_filtered_YellowCards_Data["ForAgainst"] == "Against"]
     for_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "For"]
     against_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "Against"]
+    def write_mean_stat_to_columns_2(stat, column, selected_data):
+        stat_mean = selected_data[stat].mean()
+        column.write(f"{stat_mean:.1f}")
 
-    st.subheader("Stats for selected teams")
-
-    col7, col8, col9 = st.columns(3)
-    with col7:
-        st.subheader(home_team)
-        st.subheader(for_filtered_YellowCards_Data['Yellow_Cards'].mean())
-
-    with col8:
-        st.subheader("VS")
-
-    with col9:
-        st.subheader(away_team)
-
-
-    st.subheader("Stats against selected teams")
-    col10, col11, col12 = st.columns(3)
-    with col10:
-        st.subheader(home_team)
-
-    with col11:
-        st.subheader("VS")
-
-    with col12:
-        st.subheader(away_team)
-
-
-
-
+    def write_stat_to_container_2(columns_, title, csv_stat, is_against):
+        home_data = for_filtered_YellowCards_Data if not is_against else against_filtered_YellowCards_Data
+        away_data = for_away_filtered_YellowCards_Data if not is_against else against_away_filtered_YellowCards_Data
+        col1_, col2_, col3_ = columns_
+        write_mean_stat_to_columns(csv_stat, col1_, home_data)
+        col2_.write(title)
+        write_mean_stat_to_columns(csv_stat, col3_, away_data)
 
     
 
+    st.subheader('Stats for selected teams')
+    header_columns = st.columns(3)
+    header_columns[0].write(home_team)
+    header_columns[1].write("vs")
+    header_columns[2].write(away_team)
+    for_stats = st.container()
+    with for_stats:
+        columns = st.columns(3)
+        write_stat_to_container(columns, "Yellow Cards", "Yellow_Cards", False)
+        
+    
+    st.subheader('Stats against selected teams')
+    against_header_columns = st.columns(3)
+    against_header_columns[0].write(home_team)
+    against_header_columns[1].write("vs")
+    against_header_columns[2].write(away_team)
+    against_stats = st.container()
+    with against_stats:
+        against_columns = st.columns(3)
+        write_stat_to_container(against_columns, "Yellow Cards", "Yellow_Cards", True)
+        
 
     
     
@@ -196,7 +199,7 @@ with tab2:
     
     
     tab2_1, tab2_2 = st.tabs(["Home Data", "Away Data"])
-
+    
     with tab2_1:
         st.write("Home Data")
         st.dataframe(venue_filtered_YellowCards_Data)
@@ -204,6 +207,26 @@ with tab2:
     with tab2_2:
         st.write("Away Data")
         st.dataframe(venue_away_filtered_YellowCards_Data)
+
+
+
+
+   
+
+    
+
+
+
+
+    
+
+
+    
+    
+    
+    
+    
+    
 
 
 
