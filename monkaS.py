@@ -202,7 +202,7 @@ with tab2:
         write_stat_to_container_2(against_columns, "Yellow Cards", "Yellow_Cards", True)
         write_stat_to_container_2(against_columns, "Red Cards", "Red_Cards", True)
 
-    #st.write(f"{League_Average_YellowCards:.1f}")
+    st.write("League Average Yelow Cards:"f"{League_Average_YellowCards:.1f}")
         
 
     
