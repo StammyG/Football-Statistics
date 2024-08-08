@@ -197,7 +197,8 @@ with tab2:
         write_stat_to_container_2(columns, "Yellow Cards", "Yellow_Cards", False)
         write_stat_to_container_2(columns, "Red Cards", "Red_Cards", False)
         
-    
+    st.write("") 
+
     st.subheader('Stats against selected teams')
     against_header_columns = st.columns(3)
     against_header_columns[0].write(home_team)
