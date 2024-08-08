@@ -75,7 +75,7 @@ with tab1:
 
     
 
-    st.subheader('Stats for selected teams')
+    st.markdown('**Stats for selected teams**')
     header_columns = st.columns(3)
     header_columns[0].write(home_team)
     header_columns[1].write("vs")
@@ -95,7 +95,7 @@ with tab1:
     
     st.write("") 
 
-    st.subheader('Stats against selected teams')
+    st.markdown('**Stats against selected teams**'))
     against_header_columns = st.columns(3)
     against_header_columns[0].write(home_team)
     against_header_columns[1].write("vs")
