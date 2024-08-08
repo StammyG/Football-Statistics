@@ -94,8 +94,9 @@ with tab1:
         write_stat_to_container(columns, "xG", "xG", False)
     
     st.write("") 
+    
 
-    st.markdown('**Stats against selected teams**'))
+    st.markdown('**Stats against selected Teams**')
     against_header_columns = st.columns(3)
     against_header_columns[0].write(home_team)
     against_header_columns[1].write("vs")
