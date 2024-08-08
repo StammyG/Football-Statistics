@@ -163,7 +163,11 @@ with tab2:
     League_Average_YellowCards1 = season_filtered_YellowCards_Data.groupby('ForAgainst')['Yellow_Cards'].mean().reset_index()
     League_Average_YellowCards = League_Average_YellowCards1['Yellow_Cards'].sum()
 
-    League_Average_RedCards = competition_filtered_YellowCards_Data["Red_Cards"].mean()
+    League_Average_RedCards1 = season_filtered_YellowCards_Data.groupby('ForAgainst')['Red_Cards'].mean().reset_index()
+    League_Average_RedCards = League_Average_RedCards1['Red_Cards'].sum()
+
+
+    
     
     def write_mean_stat_to_columns_2(stat, column, selected_data):
         stat_mean = selected_data[stat].mean()
@@ -206,7 +210,8 @@ with tab2:
         write_stat_to_container_2(against_columns, "Red Cards", "Red_Cards", True)
 
 
-    st.write(("League Average Yelow Cards: "  f"{League_Average_YellowCards:.1f}"))
+    st.write(("League Average Yelow Cards per Match: "  f"{League_Average_YellowCards:.1f}"))
+    st.write(("League Average Red Cards per Match: " f"{League_Average_RedCards:1f})) 
 
     
     
