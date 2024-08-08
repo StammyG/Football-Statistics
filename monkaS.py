@@ -211,7 +211,7 @@ with tab2:
 
 
     st.write(("League Average Yelow Cards per Match: "  f"{League_Average_YellowCards:.1f}"))
-    st.write(("League Average Red Cards per Match: " f"{League_Average_RedCards:1f})) 
+    st.write(("League Average Red Cards per Match: " f"{League_Average_RedCards:1f}")) 
 
     
     
@@ -226,7 +226,7 @@ with tab2:
 
     with tab2_2:
         st.write("Away Data")
-        st.dataframe(League_Average_YellowCards1)
+        st.dataframe(venue_away_filtered_YellowCards_Data)
 
 
 
