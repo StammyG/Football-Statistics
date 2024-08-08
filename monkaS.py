@@ -209,8 +209,14 @@ with tab2:
         write_stat_to_container_2(against_columns, "Yellow Cards", "Yellow_Cards", True)
         write_stat_to_container_2(against_columns, "Red Cards", "Red_Cards", True)
 
+    st.write("") 
+    st.write("") 
+    st.write("") 
+
 
     st.write(("League Average Yelow Cards per Match: "  f"{League_Average_YellowCards:.1f}"))
+    st.write("") 
+    st.write("") 
     st.write(("League Average Red Cards per Match: " f"{League_Average_RedCards:.2f}")) 
 
     
