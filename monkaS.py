@@ -217,7 +217,7 @@ with tab2:
     st.write("") 
 
 
-    st.markdown(("**League Average Yelow Cards per Match: "  f"{League_Average_YellowCards:.1f}**"))
+    st.markdown(("**League Average Yellow Cards per Match: "  f"{League_Average_YellowCards:.1f}**"))
 
     st.markdown(("**League Average Red Cards per Match: " f"{League_Average_RedCards:.2f}**")) 
     st.write("") 
