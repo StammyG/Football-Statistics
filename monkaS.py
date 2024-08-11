@@ -289,7 +289,7 @@ with tab2:
         header_columns[0].write(home_team)
         header_columns[1].write("vs")
         header_columns[2].write(away_team)
-         tab3_1, tab3_2 = st.tabs(["Home Data", "Away Data"])
+        tab3_1, tab3_2 = st.tabs(["Home Data", "Away Data"])
     
         with tab3_1:
             st.write("Home Data")
