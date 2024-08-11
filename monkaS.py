@@ -17,7 +17,7 @@ def load_data(file_path):
 
 data = load_data(db_csv)
 YellowCards_Data = pd.read_csv("SusLeagues_Cards_2024.csv")
-SuperLeague_Data = pd.read_excel("SuperLeague_2024_Stats2.xlsx")
+SuperLeague_Data = pd.read_excel('SuperLeague_2024_Stats2.xlsx')
 data['Season'] = data['Season'].astype(str)
 YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
 SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
