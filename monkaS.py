@@ -297,7 +297,7 @@ with tab2:
 
         with tab3_2:
             st.write("Away Data")
-            st.dataframe(superleague_venue_away_filtered_data)
+            st.dataframe(superleague_for_away_filtered_data)
 
         
 
@@ -308,11 +308,11 @@ with tab2:
     
         with tab3_1:
             st.write("Home Data")
-            st.dataframe(Superleague_venue_filtered_data)
+            st.dataframe(superleague_against_filtered_data)
 
         with tab3_2:
             st.write("Away Data")
-            st.dataframe(superleague_venue_away_filtered_data)
+            st.dataframe(superleague_against_away_filtered_data)
 
 
 
