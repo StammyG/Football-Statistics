@@ -314,6 +314,39 @@ with tab2:
             st.write("Away Data")
             st.dataframe(superleague_against_away_filtered_data)
 
+        for_stats = st.container()
+        with for_stats:
+            columns = st.columns(3)
+            write_stat_to_container_3(columns, "Shots on Target", "SoT", False)
+            write_stat_to_container_3(columns, "Shots", "Shots", False)
+            write_stat_to_container_3(columns, "Tackles", "Tackles", False)
+            write_stat_to_container_3(columns, "Goal Kicks", "Goal_Kicks", False)
+            write_stat_to_container_3(columns, "Fouls Commited", "Fouls_Commited", False)
+            write_stat_to_container_3(columns, "Offsides", "Offsides", False)
+            write_stat_to_container_3(columns, "Yellow Cards", "Yellow_Cards", False)
+            write_stat_to_container_3(columns, "Corner Kicks", "Corner_Kicks", False)
+    
+        st.write("") 
+    
+
+        st.markdown('**Stats against selected Teams**')
+        against_header_columns = st.columns(3)
+        against_header_columns[0].write(home_team)
+        against_header_columns[1].write("vs")
+        against_header_columns[2].write(away_team)
+        against_stats = st.container()
+        with against_stats:
+            against_columns = st.columns(3)
+            write_stat_to_container_3(against_columns, "Shots on Target", "SoT", True)
+            write_stat_to_container_3(against_columns, "Shots", "Shots", True)
+            write_stat_to_container_3(against_columns, "Tackles", "Tackles", True)
+            write_stat_to_container_3(against_columns, "Goal Kicks", "Goal_Kicks", True)
+            write_stat_to_container_3(against_columns, "Fouls Commited", "Fouls_Commited", True)
+            write_stat_to_container_3(against_columns, "Offsides", "Offsides", True)
+            write_stat_to_container_3(against_columns, "Yellow Cards", "Yellow_Cards", True)
+            write_stat_to_container_3(against_columns, "Corner Kicks", "Corner_Kicks", True)
+
+
 
 
 
