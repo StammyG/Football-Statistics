@@ -254,7 +254,7 @@ with tab2:
         )
         Superleague_filtered_data = Superleague_filtered_data[Superleague_filtered_data['Opponent'].isin(opponents)]
         venues = Superleague_filtered_data['Venue'].unique()
-        venue = st.multiselect('Select Venue for Home Team', options=venues,key="superleague_home_venue)
+        venue = st.multiselect('Select Venue for Home Team', options=venues,key="superleague_home_venue")
         Superleague_venue_filtered_data = Superleague_filtered_data[Superleague_filtered_data['Venue'].isin(venue)]
 
 
