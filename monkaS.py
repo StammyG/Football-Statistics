@@ -289,30 +289,7 @@ with tab2:
         header_columns[0].write(home_team)
         header_columns[1].write("vs")
         header_columns[2].write(away_team)
-        tab3_1, tab3_2 = st.tabs(["Home Data", "Away Data"])
-    
-        with tab3_1:
-            st.write("Home Data")
-            st.dataframe(superleague_for_filtered_data)
-
-        with tab3_2:
-            st.write("Away Data")
-            st.dataframe(superleague_for_away_filtered_data)
-
         
-
-
-        
-        
-        tab3_1, tab3_2 = st.tabs(["Home Data", "Away Data"])
-    
-        with tab3_1:
-            st.write("Home Data")
-            st.dataframe(superleague_against_filtered_data)
-
-        with tab3_2:
-            st.write("Away Data")
-            st.dataframe(superleague_against_away_filtered_data)
 
         for_stats = st.container()
         with for_stats:
@@ -329,6 +306,7 @@ with tab2:
     
 
         st.markdown('**Stats against selected Teams**')
+        st.write("")
         against_header_columns = st.columns(3)
         against_header_columns[0].write(home_team)
         against_header_columns[1].write("vs")
@@ -342,6 +320,16 @@ with tab2:
             write_stat_to_container_3(against_columns, "Fouls Commited", "Fouls_Commited", True)
             write_stat_to_container_3(against_columns, "Offsides", "Offsides", True)
             write_stat_to_container_3(against_columns, "Yellow Cards", "Yellow_Cards", True)
+
+        tab3_1, tab3_2 = st.tabs(["Home Data", "Away Data"])
+    
+        with tab3_1:
+            st.write("Home Data")
+            st.dataframe(Superleague_venue_filtered_data)
+
+        with tab3_2:
+            st.write("Away Data")
+            st.dataframe(superleague_venue_away_filtered_data)
 
         
         
