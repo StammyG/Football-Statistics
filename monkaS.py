@@ -323,7 +323,7 @@ with tab2:
         against_stats = st.container()
         with against_stats:
             against_columns = st.columns(3)
-            write_stat_to_container_3(columns, "Shots", "Shots", True)
+            write_stat_to_container_3(against_columns, "Shots", "Shots", True)
             write_stat_to_container_3(against_columns, "Shots on Target", "SoT", True)
             write_stat_to_container_3(against_columns, "Throw Ins", "Throw_Ins", True)
             write_stat_to_container_3(against_columns, "Goal Kicks", "Goal_Kicks", True)
