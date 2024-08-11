@@ -245,7 +245,7 @@ with tab2:
         st.header('Filter Options')
         seasons = SuperLeague_Data['Season'].unique()
         season = st.selectbox('Select Season', options=seasons,key= "superleague_season")
-        Superleague_season_filtered_data = SuperLeague_Data[competition_filtered_data['Season'] == season]
+        Superleague_season_filtered_data = SuperLeague_Data[SuperLeague_Data['Season'] == season]
         
         home_team = st.selectbox('Select Home Team', options=Superleague_season_filtered_data['Team'].unique(),key ="superLeague_home")
         Superleague_filtered_data = Superleague_season_filtered_data[Superleague_season_filtered_data['Team'] == home_team]
