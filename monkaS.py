@@ -21,6 +21,7 @@ SuperLeague_Data = pd.read_csv("SuperLeague_2024_Stats.csv")
 data['Season'] = data['Season'].astype(str)
 YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
 SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
+SuperLeague_Data['Shots'] = SuperLeague_Data['Shots'].astype(int)
 # Create tabs
 tab1, tab2, tab3 = st.tabs(["Team Stats for Top 5", "Yellow Cards for Leagues outside the Top 5","GREEK SUPERLEAGUE STATS"])
 
