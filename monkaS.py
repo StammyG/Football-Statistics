@@ -241,7 +241,7 @@ with tab2:
         st.write("Away Data")
         st.dataframe(venue_away_filtered_YellowCards_Data)
 
-    with tab3
+    with tab3:
     st.header('Filter Options')
     seasons = SuperLeague_Data['Season'].unique()
     season = st.selectbox('Select Season', options=seasons)
