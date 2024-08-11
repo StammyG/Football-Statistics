@@ -256,6 +256,18 @@ with tab2:
         venues = Superleague_filtered_data['Venue'].unique()
         venue = st.multiselect('Select Venue for Home Team', options=venues,key="superleague_home_venue")
         Superleague_venue_filtered_data = Superleague_filtered_data[Superleague_filtered_data['Venue'].isin(venue)]
+        
+        away_team = st.selectbox('Select Away Team', options=Superleague_season_filtered_data['Team'].unique())
+        superleague_away_filtered_data = Superleague_season_filtered_data[Superleague_season_filtered_data['Team'] == away_team]
+        away_opponents = st.multiselect('Select Opponents', options=superleague_away_filtered_data['Opponent'].unique(), default=superleague_away_filtered_data['Opponent'].unique(), key='superleague_away_opponents'
+        )
+        superleague_away_filtered_data = superleague_away_filtered_data[superleague_away_filtered_data['Opponent'].isin(away_opponents)]
+
+        venues = superleague_away_filtered_data['Venue'].unique()
+        venue_away = st.multiselect('Select Venue for Away Team', options=venues,key="superleague_away_venues")
+        superleague_venue_away_filtered_data = superleague_away_filtered_data[superleague_away_filtered_data['Venue'].isin(venue_away)]
+
+
 
 
 
