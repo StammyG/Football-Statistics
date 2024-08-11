@@ -17,10 +17,12 @@ def load_data(file_path):
 
 data = load_data(db_csv)
 YellowCards_Data = pd.read_csv("SusLeagues_Cards_2024.csv")
+SuperLeague_Data = pd.read_csv("SuperLeague_2024_Stats.csv")
 data['Season'] = data['Season'].astype(str)
 YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
+SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
 # Create tabs
-tab1, tab2 = st.tabs(["Team Stats for Top 5", "Yellow Cards for Leagues outside the Top 5"])
+tab1, tab2, tab3 = st.tabs(["Team Stats for Top 5", "Yellow Cards for Leagues outside the Top 5","GREEK SUPERLEAGUE STATS"])
 
 with tab1:
     st.header('Filter Options')
@@ -238,6 +240,23 @@ with tab2:
     with tab2_2:
         st.write("Away Data")
         st.dataframe(venue_away_filtered_YellowCards_Data)
+
+with tab3
+st.header('Filter Options')
+seasons = SuperLeague_Data['Season'].unique()
+    season = st.selectbox('Select Season', options=seasons)
+    Superleague_season_filtered_data = SuperLeague_Data[competition_filtered_data['Season'] == season]
+home_team = st.selectbox('Select Home Team', options=Superleague_season_filtered_data['Team'].unique())
+    Superleague_filtered_data = Superleague_season_filtered_data[Superleague_season_filtered_data['Team'] == home_team]
+    opponents = st.multiselect(
+        'Select Opponents', options=Superleague_filtered_data['Opponent'].unique(), default=Superleague_filtered_data['Opponent'].unique()
+    )
+    Superleague_filtered_data = Superleague_filtered_data[Superleague_filtered_data['Opponent'].isin(opponents)]
+venues = Superleague_filtered_data['Venue'].unique()
+    venue = st.multiselect('Select Venue for Home Team', options=venues)
+    Superleague_venue_filtered_data = Superleague_filtered_data[Superleague_filtered_data['Venue'].isin(venue)]
+
+
 
 
 
