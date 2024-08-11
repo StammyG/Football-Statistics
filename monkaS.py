@@ -289,6 +289,15 @@ with tab2:
         header_columns[0].write(home_team)
         header_columns[1].write("vs")
         header_columns[2].write(away_team)
+         tab3_1, tab3_2 = st.tabs(["Home Data", "Away Data"])
+    
+        with tab3_1:
+            st.write("Home Data")
+            st.dataframe(superleague_for_filtered_data)
+
+        with tab3_2:
+            st.write("Away Data")
+            st.dataframe(superleague_venue_away_filtered_data)
 
         for_stats = st.container()
         with for_stats:
