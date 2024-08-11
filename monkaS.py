@@ -335,7 +335,7 @@ with tab2:
             write_stat_to_container_3(against_columns, "Corner Kicks", "Corner_Kicks", True)
 
         st.write("") 
-        st.markdown("**League Stats for Cards**") 
+        st.markdown("**League Stats for Cards:**") 
         
 
 
