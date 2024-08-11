@@ -308,8 +308,8 @@ with tab2:
             write_stat_to_container_3(columns, "Offsides", "Offsides", False)
             write_stat_to_container_3(columns, "Tackles", "Tackles", False)
             write_stat_to_container_3(columns, "Yellow Cards", "Yellow_Cards", False)
-            write_stat_to_container_3(against_columns, "Red Cards", "Red_Cards", False)
-            write_stat_to_container_3(against_columns, "Corner Kicks", "Corner_Kicks", False)
+            write_stat_to_container_3(columns, "Red Cards", "Red_Cards", False)
+            write_stat_to_container_3(columns, "Corner Kicks", "Corner_Kicks", False)
     
         st.write("") 
     
