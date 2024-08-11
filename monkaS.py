@@ -267,6 +267,64 @@ with tab2:
         venue_away = st.multiselect('Select Venue for Away Team', options=venues,key="superleague_away_venues")
         superleague_venue_away_filtered_data = superleague_away_filtered_data[superleague_away_filtered_data['Venue'].isin(venue_away)]
         
+        superleague_for_filtered_data = Superleague_venue_filtered_data[Superleague_venue_filtered_data["ForAgainst"] == "For"]
+        superleague_against_filtered_data = Superleague_venue_filtered_data[Superleague_venue_filtered_data["ForAgainst"] == "Against"]
+        superleague_for_away_filtered_data = superleague_venue_away_filtered_data[superleague_venue_away_filtered_data["ForAgainst"] == "For"]
+        superleague_against_away_filtered_data = superleague_venue_away_filtered_data[superleague_venue_away_filtered_data["ForAgainst"] == "Against"]
+
+        def write_mean_stat_to_columns_3(stat, column, selected_data):
+            stat_mean = selected_data[stat].mean()
+            column.write(f"{stat_mean:.1f}")
+
+        def write_stat_to_container_3(columns_, title, csv_stat, is_against):
+            home_data = superleague_for_filtered_data if not is_against else superleague_against_filtered_data
+            away_data = superleague_for_away_filtered_data if not is_against else superleague_against_away_filtered_data
+            col1_, col2_, col3_ = columns_
+            write_mean_stat_to_columns_3(csv_stat, col1_, home_data)
+            col2_.write(title)
+            write_mean_stat_to_columns_3(csv_stat, col3_, away_data)
+
+        st.markdown('**Stats for selected teams**')
+    header_columns = st.columns(3)
+    header_columns[0].write(home_team)
+    header_columns[1].write("vs")
+    header_columns[2].write(away_team)
+
+    for_stats = st.container()
+    with for_stats:
+        columns = st.columns(3)
+        write_stat_to_container3(columns, "Shots on Target", "SoT", False)
+        write_stat_to_container3(columns, "Shots", "Shots", False)
+        write_stat_to_container3(columns, "Tackles", "Tackles", False)
+        write_stat_to_container3(columns, "Goal Kicks", "Goal_Kicks", False)
+        write_stat_to_container3(columns, "Fouls Commited", "Fouls_Commited", False)
+        write_stat_to_container3(columns, "Offsides", "Offsides", False)
+        write_stat_to_container3(columns, "Yellow Cards", "Yellow_Cards", False)
+        write_stat_to_container3(columns, "Corner Kicks", "Corner_Kicks", False)
+    
+    st.write("") 
+    
+
+    st.markdown('**Stats against selected Teams**')
+    against_header_columns = st.columns(3)
+    against_header_columns[0].write(home_team)
+    against_header_columns[1].write("vs")
+    against_header_columns[2].write(away_team)
+    against_stats = st.container()
+    with against_stats:
+        against_columns = st.columns(3)
+        write_stat_to_container3(against_columns, "Shots on Target", "SoT", True)
+        write_stat_to_container3(against_columns, "Shots", "Shots", True)
+        write_stat_to_container3(against_columns, "Tackles", "Tackles", True)
+        write_stat_to_container3(against_columns, "Goal Kicks", "Goal_Kicks", True)
+        write_stat_to_container3(against_columns, "Fouls Commited", "Fouls_Commited", True)
+        write_stat_to_container3(against_columns, "Offsides", "Offsides", True)
+        write_stat_to_container3(against_columns, "Yellow Cards", "Yellow_Cards", True)
+        write_stat_to_container3(against_columns, "Corner Kicks", "Corner_Kicks", True)
+
+
+        
+        
         tab3_1, tab3_2 = st.tabs(["Home Data", "Away Data"])
     
         with tab3_1:
