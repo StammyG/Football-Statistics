@@ -314,7 +314,7 @@ with tab2:
             st.write("Away Data")
             st.dataframe(superleague_against_away_filtered_data)
 
-     for_stats = st.container()
+        for_stats = st.container()
         with for_stats:
             columns = st.columns(3)
             write_stat_to_container_3(columns, "Shots on Target", "SoT", False)
