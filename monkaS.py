@@ -272,6 +272,12 @@ with tab2:
         superleague_for_away_filtered_data = superleague_venue_away_filtered_data[superleague_venue_away_filtered_data["ForAgainst"] == "For"]
         superleague_against_away_filtered_data = superleague_venue_away_filtered_data[superleague_venue_away_filtered_data["ForAgainst"] == "Against"]
 
+        superleague_Average_YellowCards1 = Superleague_season_filtered_data.groupby('ForAgainst')['Yellow_Cards'].mean().reset_index()
+        superleague_Average_YellowCards = superleague_Average_YellowCards1['Yellow_Cards'].sum()
+
+        superleague_Average_RedCards1 = Superleague_season_filtered_data.groupby('ForAgainst')['Red_Cards'].mean().reset_index()
+        superleague_Average_RedCards = superleague_Average_RedCards1['Red_Cards'].sum()
+
         def write_mean_stat_to_columns_3(stat, column, selected_data):
             stat_mean = selected_data[stat].mean()
             column.write(f"{stat_mean:.1f}")
@@ -327,7 +333,16 @@ with tab2:
             write_stat_to_container_3(against_columns, "Yellow Cards", "Yellow_Cards", True)
             write_stat_to_container_3(against_columns, "Red Cards", "Red_Cards", True)
             write_stat_to_container_3(against_columns, "Corner Kicks", "Corner_Kicks", True)
-            
+
+        st.write("") 
+        st.markdown("**League Stats for Cards**") 
+        st.write("") 
+
+
+        st.markdown(("**League Average Yellow Cards per Match: "  f"{superleague_Average_YellowCards:.1f}**"))
+
+        st.markdown(("**League Average Red Cards per Match: " f"{superleague_Average_RedCards:.2f}**"))
+        st.write("")
             
 
         tab3_1, tab3_2 = st.tabs(["Home Data", "Away Data"])
