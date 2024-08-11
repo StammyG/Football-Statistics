@@ -21,7 +21,6 @@ SuperLeague_Data = pd.read_csv("SuperLeague_2024_Stats.csv")
 data['Season'] = data['Season'].astype(str)
 YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
 SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
-SuperLeague_Data['Shots'] = SuperLeague_Data['Shots'].astype(int)
 # Create tabs
 tab1, tab2, tab3 = st.tabs(["Team Stats for Top 5", "Yellow Cards for Leagues outside the Top 5","GREEK SUPERLEAGUE STATS"])
 
@@ -319,7 +318,6 @@ with tab2:
         with for_stats:
             columns = st.columns(3)
             write_stat_to_container_3(columns, "Shots on Target", "SoT", False)
-            write_stat_to_container_3(columns, "Shots", "Shots", False)
             write_stat_to_container_3(columns, "Tackles", "Tackles", False)
             write_stat_to_container_3(columns, "Goal Kicks", "Goal_Kicks", False)
             write_stat_to_container_3(columns, "Fouls Commited", "Fouls_Commited", False)
@@ -338,7 +336,6 @@ with tab2:
         with against_stats:
             against_columns = st.columns(3)
             write_stat_to_container_3(against_columns, "Shots on Target", "SoT", True)
-            write_stat_to_container_3(against_columns, "Shots", "Shots", True)
             write_stat_to_container_3(against_columns, "Tackles", "Tackles", True)
             write_stat_to_container_3(against_columns, "Goal Kicks", "Goal_Kicks", True)
             write_stat_to_container_3(against_columns, "Fouls Commited", "Fouls_Commited", True)
