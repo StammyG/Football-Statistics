@@ -241,18 +241,18 @@ with tab2:
         st.write("Away Data")
         st.dataframe(venue_away_filtered_YellowCards_Data)
 
-with tab3
-st.header('Filter Options')
-seasons = SuperLeague_Data['Season'].unique()
+    with tab3
+    st.header('Filter Options')
+    seasons = SuperLeague_Data['Season'].unique()
     season = st.selectbox('Select Season', options=seasons)
     Superleague_season_filtered_data = SuperLeague_Data[competition_filtered_data['Season'] == season]
-home_team = st.selectbox('Select Home Team', options=Superleague_season_filtered_data['Team'].unique())
+    home_team = st.selectbox('Select Home Team', options=Superleague_season_filtered_data['Team'].unique())
     Superleague_filtered_data = Superleague_season_filtered_data[Superleague_season_filtered_data['Team'] == home_team]
     opponents = st.multiselect(
         'Select Opponents', options=Superleague_filtered_data['Opponent'].unique(), default=Superleague_filtered_data['Opponent'].unique()
     )
     Superleague_filtered_data = Superleague_filtered_data[Superleague_filtered_data['Opponent'].isin(opponents)]
-venues = Superleague_filtered_data['Venue'].unique()
+    venues = Superleague_filtered_data['Venue'].unique()
     venue = st.multiselect('Select Venue for Home Team', options=venues)
     Superleague_venue_filtered_data = Superleague_filtered_data[Superleague_filtered_data['Venue'].isin(venue)]
 
