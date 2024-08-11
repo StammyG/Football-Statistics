@@ -336,7 +336,7 @@ with tab2:
 
         st.write("") 
         st.markdown("**League Stats for Cards**") 
-        st.write("") 
+        
 
 
         st.markdown(("**League Average Yellow Cards per Match: "  f"{superleague_Average_YellowCards:.1f}**"))
