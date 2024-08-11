@@ -314,7 +314,7 @@ with tab2:
             st.write("Away Data")
             st.dataframe(superleague_against_away_filtered_data)
 
-        for_stats = st.container()
+     for_stats = st.container()
         with for_stats:
             columns = st.columns(3)
             write_stat_to_container_3(columns, "Shots on Target", "SoT", False)
@@ -324,7 +324,6 @@ with tab2:
             write_stat_to_container_3(columns, "Fouls Commited", "Fouls_Commited", False)
             write_stat_to_container_3(columns, "Offsides", "Offsides", False)
             write_stat_to_container_3(columns, "Yellow Cards", "Yellow_Cards", False)
-            write_stat_to_container_3(columns, "Corner Kicks", "Corner_Kicks", False)
     
         st.write("") 
     
@@ -344,8 +343,9 @@ with tab2:
             write_stat_to_container_3(against_columns, "Fouls Commited", "Fouls_Commited", True)
             write_stat_to_container_3(against_columns, "Offsides", "Offsides", True)
             write_stat_to_container_3(against_columns, "Yellow Cards", "Yellow_Cards", True)
-            write_stat_to_container_3(against_columns, "Corner Kicks", "Corner_Kicks", True)
 
+        
+        
 
 
 
