@@ -244,16 +244,17 @@ with tab2:
     with tab3:
         st.header('Filter Options')
         seasons = SuperLeague_Data['Season'].unique()
-        season = st.selectbox('Select Season', options=seasons)
+        season = st.selectbox('Select Season', options=seasons,key= "superleague_season")
         Superleague_season_filtered_data = SuperLeague_Data[competition_filtered_data['Season'] == season]
-        home_team = st.selectbox('Select Home Team', options=Superleague_season_filtered_data['Team'].unique())
+        
+        home_team = st.selectbox('Select Home Team', options=Superleague_season_filtered_data['Team'].unique(),key ="superLeague_home")
         Superleague_filtered_data = Superleague_season_filtered_data[Superleague_season_filtered_data['Team'] == home_team]
         opponents = st.multiselect(
-            'Select Opponents', options=Superleague_filtered_data['Opponent'].unique(), default=Superleague_filtered_data['Opponent'].unique()
+            'Select Opponents', options=Superleague_filtered_data['Opponent'].unique(), default=Superleague_filtered_data['Opponent'].unique(),key="superleague_home_opponents"
         )
         Superleague_filtered_data = Superleague_filtered_data[Superleague_filtered_data['Opponent'].isin(opponents)]
         venues = Superleague_filtered_data['Venue'].unique()
-        venue = st.multiselect('Select Venue for Home Team', options=venues)
+        venue = st.multiselect('Select Venue for Home Team', options=venues,key="superleague_home_venue)
         Superleague_venue_filtered_data = Superleague_filtered_data[Superleague_filtered_data['Venue'].isin(venue)]
 
 
