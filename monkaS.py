@@ -266,6 +266,18 @@ with tab2:
         venues = superleague_away_filtered_data['Venue'].unique()
         venue_away = st.multiselect('Select Venue for Away Team', options=venues,key="superleague_away_venues")
         superleague_venue_away_filtered_data = superleague_away_filtered_data[superleague_away_filtered_data['Venue'].isin(venue_away)]
+        
+        tab3_1, tab3_2 = st.tabs(["Home Data", "Away Data"])
+    
+        with tab3_1:
+            st.write("Home Data")
+            st.dataframe(Superleague_venue_filtered_data)
+
+        with tab3_2:
+            st.write("Away Data")
+            st.dataframe(superleague_venue_away_filtered_data)
+
+
 
 
 
