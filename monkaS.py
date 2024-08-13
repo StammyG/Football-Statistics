@@ -314,7 +314,7 @@ with tab2:
         st.write("") 
     
 
-        st.markdown('**Stats of slected Opponents against selected Teams**')
+        st.markdown('**Stats of selected Opponents against selected Teams**')
         st.write("")
         against_header_columns = st.columns(3)
         against_header_columns[0].write(home_team)
