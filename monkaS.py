@@ -191,7 +191,7 @@ with tab2:
 
     
 
-    st.subheader('Stats for selected teams')
+    st.subheader('Stats of selected teams against selected opponents')
     header_columns = st.columns(3)
     header_columns[0].write(home_team)
     header_columns[1].write("vs")
@@ -204,7 +204,7 @@ with tab2:
         
     st.write("") 
 
-    st.subheader('Stats against selected teams')
+    st.subheader('Stats of selected opponents against selected teams')
     against_header_columns = st.columns(3)
     against_header_columns[0].write(home_team)
     against_header_columns[1].write("vs")
