@@ -290,7 +290,7 @@ with tab2:
             col2_.write(title)
             write_mean_stat_to_columns_3(csv_stat, col3_, away_data)
 
-        st.markdown('**Stats of selected teams against selected Opponents**')
+        st.markdown('**Stats of selected Teams against selected Opponents**')
         header_columns = st.columns(3)
         header_columns[0].write(home_team)
         header_columns[1].write("vs")
