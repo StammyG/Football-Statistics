@@ -357,7 +357,11 @@ with tab2:
             st.write("Away Data")
             st.dataframe(superleague_venue_away_filtered_data)
 
-
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
 st.write("Disclaimer: All stats that are used in tabs: Team stats for Top 5 and Yellow Cards outside the top 5 Leagues are provided by FBref and the rest are provided by Sofascore")
 
         
