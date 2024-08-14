@@ -21,7 +21,9 @@ SuperLeague_Data = pd.read_csv('SuperLeague_2024_Stats_2.csv')
 data['Season'] = data['Season'].astype(str)
 YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
 SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
-# Create tabs
+
+
+#tabs
 tab1, tab2, tab3 = st.tabs(["Team Stats for Top 5", "Yellow Cards for Leagues outside the Top 5","GREEK SUPERLEAGUE STATS"])
 
 with tab1:
@@ -354,6 +356,9 @@ with tab2:
         with tab3_2:
             st.write("Away Data")
             st.dataframe(superleague_venue_away_filtered_data)
+
+
+st.write("Disclaimer: All stats that are used in tabs: Team stats for Top 5 and Yellow Cards outside the top 5 Leagues are provided by FBref and the rest are provided by Sofascore")
 
         
         
