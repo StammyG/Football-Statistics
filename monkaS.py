@@ -89,12 +89,12 @@ with tab1:
         write_std_stat_to_columns(csv_stat, col1_, home_data)
         col2_.write(title)
         write_std_stat_to_columns(csv_stat, col3_, away_data)
+        
 
     Average_YellowCards1 = season_filtered_data.groupby('ForAgainst')['Yellow_Cards'].mean().reset_index()
     Average_YellowCards = Average_YellowCards1['Yellow_Cards'].sum()
 
-    Average_RedCards1 = season_filtered_data.groupby('ForAgainst')['Red_Cards'].mean().reset_index()
-    Average_RedCards = Average_RedCards1['Red_Cards'].sum()
+
 
 
     
@@ -144,8 +144,7 @@ with tab1:
 
     st.markdown(("**League Average Yellow Cards per Match: "  f"{Average_YellowCards:.1f}**"))
 
-    st.markdown(("**League Average Red Cards per Match: " f"{Average_RedCards:.2f}**"))
-    st.write("")
+    
 
     tab1_1, tab1_2, tab1_3 = st.tabs(["Home Data", "Away Data","Standard Deviation"])
 
