@@ -6,6 +6,8 @@ Created on Fri Aug  2 17:14:06 2024
 """
 import streamlit as st
 import pandas as pd
+from PIL import Image
+
 
 st.title('StammyApp')
 
@@ -244,6 +246,7 @@ with tab2:
         st.dataframe(venue_away_filtered_YellowCards_Data)
 
     with tab3:
+        
         st.header('Filter Options')
         seasons = SuperLeague_Data['Season'].unique()
         season = st.selectbox('Select Season', options=seasons,key= "superleague_season")
