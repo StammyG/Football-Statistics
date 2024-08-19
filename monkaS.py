@@ -9,11 +9,11 @@ import pandas as pd
 
 st.title('StammyApp')
 
-db_csv = "Top_Leagues.csv"
+db_csv = "Top5_League_Stats.csv"
 
 @st.cache_data
 def load_data(file_path):
-    return pd.read_csv(file_path, delimiter=";")
+    return pd.read_csv(file_path)
 
 data = load_data(db_csv)
 YellowCards_Data = pd.read_csv("SusLeagues_Cards_2024_2.csv")
