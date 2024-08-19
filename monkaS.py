@@ -246,7 +246,14 @@ with tab2:
         st.dataframe(venue_away_filtered_YellowCards_Data)
 
     with tab3:
-        st.image("super_league_logo.jpg")
+        # Create three columns with the middle one for the image
+        colIM1, colIM2, colIM3 = st.columns([1, 2, 1])
+
+        # Center the image by displaying it in the middle column
+        with colIM2:
+            st.image("super_league_logo.jpg")
+
+        
         st.header('Filter Options')
         seasons = SuperLeague_Data['Season'].unique()
         season = st.selectbox('Select Season', options=seasons,key= "superleague_season")
