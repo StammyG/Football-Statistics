@@ -26,7 +26,7 @@ SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
 
 
 #tabs
-tab1, tab2, tab3 = st.tabs(["Team Stats for Top 5", "Yellow Cards for Leagues outside the Top 5","GREEK SUPERLEAGUE STATS"])
+tab1, tab2, tab3 = st.tabs(["Team Stats for Top 5 and Latin America", "Yellow Cards for Leagues outside the Top 5","GREEK SUPERLEAGUE STATS"])
 
 with tab1:
     st.header('Filter Options')
