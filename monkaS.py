@@ -246,7 +246,7 @@ with tab2:
         st.dataframe(venue_away_filtered_YellowCards_Data)
 
     with tab3:
-        st.image("Super_League_Greece_logo.jpg")
+        st.image("super_league_logo.jpg")
         st.header('Filter Options')
         seasons = SuperLeague_Data['Season'].unique()
         season = st.selectbox('Select Season', options=seasons,key= "superleague_season")
