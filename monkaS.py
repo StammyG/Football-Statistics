@@ -91,10 +91,10 @@ with tab1:
         write_std_stat_to_columns(csv_stat, col3_, away_data)
 
     Average_YellowCards1 = season_filtered_data.groupby('ForAgainst')['Yellow_Cards'].mean().reset_index()
-    Average_YellowCards = superleague_Average_YellowCards1['Yellow_Cards'].sum()
+    Average_YellowCards = Average_YellowCards1['Yellow_Cards'].sum()
 
     Average_RedCards1 = season_filtered_data.groupby('ForAgainst')['Red_Cards'].mean().reset_index()
-    Average_RedCards = superleague_Average_RedCards1['Red_Cards'].sum()
+    Average_RedCards = Average_RedCards1['Red_Cards'].sum()
 
 
     
