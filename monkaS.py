@@ -29,6 +29,10 @@ SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
 
 TabA,TabB = st.tabs(["Team Stats","Player Stats"])
 with TabA:
+    st.write("")
+    st.write("")
+
+    
     tab1, tab2, tab3 = st.tabs(["Team Stats for Top 5 and Latin America", "Yellow Cards for Leagues outside the Top 5","GREEK SUPERLEAGUE STATS"])
     
     with tab1:
