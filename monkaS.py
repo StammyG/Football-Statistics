@@ -481,7 +481,7 @@ with TabA:
 
 with TabB:
 
-    st.title(UNDER CONSTRUCTION)
+    st.title("UNDER CONSTRUCTION")
 
         
         
