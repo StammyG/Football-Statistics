@@ -568,6 +568,8 @@ with TabB:
                 
              </div>
         """, unsafe_allow_html=True)
+        new_order = ['Match','round','Minutes','SoT','Shots','Tackles','fouls_commited','fouls_received','Goals','xG','Assists','xA','Team','Name','Sofascore_Name','player_id'
+        filtered_team_roster =
         with st.expander(f"Show all matches that {player_name} featured in"):
          player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
          st.write(player_matches)
