@@ -544,32 +544,14 @@ with TabB:
         
         # Create columns for player name and stats
         # Create columns for player name and stats
-        colB1, colB2 = st.columns([0.09, 1.02],vertical_alignment='top')  # Adjust column width ratios for better spacing
-    
-        with colB1:
-           ## Display player name with a slightly larger font size and more space
-           button_key = f"{player_id}"
-    
-           if st.button(f"{player_name}", key=button_key):
-    
-               toggle_visibility(player_id)
-           
-    
-       # Display player matches based on toggle button state
-           if player_id in st.session_state['show_player_matches'] and st.session_state['show_player_matches'][player_id]:
-               player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-               st.write(player_matches)
-                   
-    
-       
-        with colB2:
-           # Display player stats with improved spacing and alignment
-           avg_stats = calculate_average_stats(player_id)
+        
+         avg_stats = calculate_average_stats(player_id)
          
-           st.markdown(f"""
+         st.markdown(f"""
                 <div class='player-stats'>
                     <div style='font-size:14px; margin-top:0.5px;'>
                         <div style='display: flex; flex-wrap: wrap; gap: 8px;'>
+                            <div style='font-size:12px;color:black;'><strong></strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{player_name}</span></div>
                             <div style='font-size:12px;color:black;'><strong>Minutes:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['minutes']:.2f}</span></div>
                             <div style='font-size:12px;color:black;'><strong>Shots on Target:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['SoT']:.2f}</span></div>
                             <div style='font-size:12px;color:black;'><strong>Shots:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Shots']:.2f}</span></div>
