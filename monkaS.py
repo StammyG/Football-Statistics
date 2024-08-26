@@ -490,7 +490,7 @@ with TabA:
     st.write("Disclaimer: All stats that are used in tabs: Team stats for Top 5 and Yellow Cards outside the top 5 Leagues are provided by FBref and the rest are provided by Sofascore")
 
 with TabB:
-
+st.title("Player Stats")
 players_team = player_stats['Team'].unique()
 
 colB1, colB2 = st.columns([1, 1])  # Adjust these values to control the width ratio
