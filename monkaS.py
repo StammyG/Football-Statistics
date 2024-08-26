@@ -490,95 +490,95 @@ with TabA:
     st.write("Disclaimer: All stats that are used in tabs: Team stats for Top 5 and Yellow Cards outside the top 5 Leagues are provided by FBref and the rest are provided by Sofascore")
 
 with TabB:
-st.title("Player Stats")
-players_team = player_stats['Team'].unique()
-
-colB1, colB2 = st.columns([1, 1])  # Adjust these values to control the width ratio
-
-with colB1:
-    player_team = st.selectbox('Select Team',options= players_team, key= "team_roster" )
-
+    st.title("Player Stats")
+    players_team = player_stats['Team'].unique()
     
-team_roster = player_stats[player_stats['Team']==player_team]
-filtered_team_roster = team_roster[team_roster['minutes']>10]
-unique_roster = filtered_team_roster.drop_duplicates(subset=['player_id'])
-def calculate_average_stats(player_id):
-    player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-    avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','xG','Assists','xA']].mean()
-    return avg_stats
-
-
-# Streamlit app layout
-st.subheader(f'{player_team} Roster')
-
-# Create a layout with columns for player name and stats
-if 'show_player_matches' not in st.session_state:
-    st.session_state['show_player_matches'] = {}
-
-def toggle_visibility(player_id):
-    if player_id in st.session_state['show_player_matches']:
-        # Toggle visibility of player matches
-        st.session_state['show_player_matches'][player_id] = not st.session_state['show_player_matches'][player_id]
-    else:
-        # Initialize visibility to True
-        st.session_state['show_player_matches'][player_id] = True
-        
-st.markdown("""
-    <style>
+    colB1, colB2 = st.columns([1, 1])  # Adjust these values to control the width ratio
     
-    
-    .player-stats {
-        border: 2px solid #FF5733;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 10px;
-        background-color: #000000;
-    }
-    
-    </style>
-""", unsafe_allow_html=True)
-for _, player in unique_roster.iterrows():
-    player_id = player['player_id']
-    player_name = player['Sofascore_Name']
-    
-    
-    # Create columns for player name and stats
-    # Create columns for player name and stats
-    colB1, colB2 = st.columns([0.2, 0.8],vertical_alignment='top')  # Adjust column width ratios for better spacing
-
     with colB1:
-       ## Display player name with a slightly larger font size and more space
-       button_key = f"{player_id}"
-
-       if st.button(f"{player_name}", key=button_key):
-
-           toggle_visibility(player_id)
+        player_team = st.selectbox('Select Team',options= players_team, key= "team_roster" )
+    
+        
+    team_roster = player_stats[player_stats['Team']==player_team]
+    filtered_team_roster = team_roster[team_roster['minutes']>10]
+    unique_roster = filtered_team_roster.drop_duplicates(subset=['player_id'])
+    def calculate_average_stats(player_id):
+        player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
+        avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','xG','Assists','xA']].mean()
+        return avg_stats
+    
+    
+    # Streamlit app layout
+    st.subheader(f'{player_team} Roster')
+    
+    # Create a layout with columns for player name and stats
+    if 'show_player_matches' not in st.session_state:
+        st.session_state['show_player_matches'] = {}
+    
+    def toggle_visibility(player_id):
+        if player_id in st.session_state['show_player_matches']:
+            # Toggle visibility of player matches
+            st.session_state['show_player_matches'][player_id] = not st.session_state['show_player_matches'][player_id]
+        else:
+            # Initialize visibility to True
+            st.session_state['show_player_matches'][player_id] = True
+            
+    st.markdown("""
+        <style>
+        
+        
+        .player-stats {
+            border: 2px solid #FF5733;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #000000;
+        }
+        
+        </style>
+    """, unsafe_allow_html=True)
+    for _, player in unique_roster.iterrows():
+        player_id = player['player_id']
+        player_name = player['Sofascore_Name']
+        
+        
+        # Create columns for player name and stats
+        # Create columns for player name and stats
+        colB1, colB2 = st.columns([0.2, 0.8],vertical_alignment='top')  # Adjust column width ratios for better spacing
+    
+        with colB1:
+           ## Display player name with a slightly larger font size and more space
+           button_key = f"{player_id}"
+    
+           if st.button(f"{player_name}", key=button_key):
+    
+               toggle_visibility(player_id)
+           
+    
+       # Display player matches based on toggle button state
+           if player_id in st.session_state['show_player_matches'] and st.session_state['show_player_matches'][player_id]:
+               player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
+               st.write(player_matches)
+                   
+    
        
-
-   # Display player matches based on toggle button state
-       if player_id in st.session_state['show_player_matches'] and st.session_state['show_player_matches'][player_id]:
-           player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-           st.write(player_matches)
-               
-
-   
-    with colB2:
-       # Display player stats with improved spacing and alignment
-       avg_stats = calculate_average_stats(player_id)
-     
-       st.markdown(f"""
-            <div class='player-stats'>
-                <div style='font-size:14px; margin-top:0.5px;'>
-                    <div style='display: flex; flex-wrap: wrap; gap: 8px;'>
-                        <div style='font-size:12px;'><strong>Shots on Target:</strong> <span style='color:red; font-size:16px; font-weight:bold;'>{avg_stats['SoT']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Shots:</strong> <span style='color:red; font-size:16px; font-weight:bold;'>{avg_stats['Shots']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Fouls Commited:</strong> <span style='color:red; font-size:16px; font-weight:bold;'>{avg_stats['fouls_commited']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Fouls Received:</strong> <span style='color:red; font-size:16px; font-weight:bold;'>{avg_stats['fouls_received']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Tackles:</strong> <span style='color:red; font-size:16px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
+        with colB2:
+           # Display player stats with improved spacing and alignment
+           avg_stats = calculate_average_stats(player_id)
+         
+           st.markdown(f"""
+                <div class='player-stats'>
+                    <div style='font-size:14px; margin-top:0.5px;'>
+                        <div style='display: flex; flex-wrap: wrap; gap: 8px;'>
+                            <div style='font-size:12px;'><strong>Shots on Target:</strong> <span style='color:red; font-size:16px; font-weight:bold;'>{avg_stats['SoT']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Shots:</strong> <span style='color:red; font-size:16px; font-weight:bold;'>{avg_stats['Shots']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Fouls Commited:</strong> <span style='color:red; font-size:16px; font-weight:bold;'>{avg_stats['fouls_commited']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Fouls Received:</strong> <span style='color:red; font-size:16px; font-weight:bold;'>{avg_stats['fouls_received']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Tackles:</strong> <span style='color:red; font-size:16px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        """, unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
 
         
         
