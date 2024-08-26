@@ -532,7 +532,7 @@ with TabB:
             border-radius: 5px;
             padding: 10px;
             margin-top: 10px;
-            background-color: #B0B0B0;
+            background-color: #696969;
         }
         
         </style>
@@ -544,7 +544,7 @@ with TabB:
         
         # Create columns for player name and stats
         # Create columns for player name and stats
-        colB1, colB2 = st.columns([0.2, 0.8],vertical_alignment='top')  # Adjust column width ratios for better spacing
+        colB1, colB2 = st.columns([0.09, 1.02],vertical_alignment='top')  # Adjust column width ratios for better spacing
     
         with colB1:
            ## Display player name with a slightly larger font size and more space
