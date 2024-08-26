@@ -29,7 +29,7 @@ player_stats = pd.read_csv('Player_Stats_EPL2024_cleaned.csv')
 player_stats = pd.merge(player_stats, roster, on='id', how='outer')
 player_stats = player_stats.rename(columns={'id':'player_id'})
 player_stats['Team'] = player_stats['Team'].fillna('Random')
-new_order = ['Match','round','Minutes','SoT','Shots','Tackles','fouls_commited','fouls_received','Goals','xG','Assists','xA','Team','Name','Sofascore_Name','player_id']
+new_order = ['Match','round','minutes','SoT','Shots','Tackles','fouls_commited','fouls_received','Goals','xG','Assists','xA','Team','Name','Sofascore_Name','player_id']
 player_stats = player_stats[new_order]
 
 #tabs
