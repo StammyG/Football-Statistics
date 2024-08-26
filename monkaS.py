@@ -24,8 +24,8 @@ data['Season'] = data['Season'].astype(str)
 YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
 SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
 
-roster = pd.read_csv('C:/Users/StammyG/Documents/Rosters.csv')
-player_stats = pd.read_csv('C:/Users/StammyG/Documents/Top5_Leagues_Player_Stats/Player_Stats_EPL2024_cleaned.csv')
+roster = pd.read_csv('Rosters.csv')
+player_stats = pd.read_csv('Player_Stats_EPL2024_cleaned.csv')
 player_stats = pd.merge(player_stats, roster, on='id', how='outer')
 player_stats = player_stats.rename(columns={'id':'player_id'})
 
