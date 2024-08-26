@@ -28,7 +28,7 @@ roster = pd.read_csv('Rosters.csv')
 player_stats = pd.read_csv('Player_Stats_EPL2024_cleaned.csv')
 player_stats = pd.merge(player_stats, roster, on='id', how='outer')
 player_stats = player_stats.rename(columns={'id':'player_id'})
-
+player_stats['Team'].fillna('',inplace=true)
 
 
 #tabs
