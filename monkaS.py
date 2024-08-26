@@ -532,7 +532,7 @@ with TabB:
             border-radius: 5px;
             padding: 10px;
             margin-top: 10px;
-            background-color: #000000;
+            background-color: #B0B0B0;
         }
         
         </style>
