@@ -566,7 +566,7 @@ with TabB:
            # Display player stats with improved spacing and alignment
            avg_stats = calculate_average_stats(player_id)
          
-          st.markdown(f"""
+           st.markdown(f"""
                 <div class='player-stats'>
                     <div style='font-size:14px; margin-top:0.5px;'>
                         <div style='display: flex; flex-wrap: wrap; gap: 8px;'>
