@@ -531,7 +531,7 @@ with TabB:
             border: 2px solid #FF5733;
             border-radius: 5px;
             padding: 10px;
-            margin-top: 10px;
+            margin-top: 5px;
             background-color: #FFFFFF;
         }
         
