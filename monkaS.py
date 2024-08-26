@@ -567,24 +567,24 @@ with TabB:
            avg_stats = calculate_average_stats(player_id)
          
           st.markdown(f"""
-            <div class='player-stats'>
-                <div style='font-size:14px; margin-top:0.5px;'>
-                    <div style='display: flex; flex-wrap: wrap; gap: 8px;'>
-                        <div style='font-size:12px;'><strong>Minutes:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['minutes']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Shots on Target:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['SoT']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Shots:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['Shots']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Fouls Commited:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_commited']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Fouls Received:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_received']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Tackles:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Goals:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['Goals']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>xG:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['xG']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>Assists:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['Assists']:.2f}</span></div>
-                        <div style='font-size:12px;'><strong>xA:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['xA']:.2f}</span></div>
+                <div class='player-stats'>
+                    <div style='font-size:14px; margin-top:0.5px;'>
+                        <div style='display: flex; flex-wrap: wrap; gap: 8px;'>
+                            <div style='font-size:12px;'><strong>Minutes:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['minutes']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Shots on Target:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['SoT']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Shots:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['Shots']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Fouls Commited:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_commited']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Fouls Received:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_received']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Tackles:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Goals:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['Goals']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>xG:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['xG']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>Assists:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['Assists']:.2f}</span></div>
+                            <div style='font-size:12px;'><strong>xA:</strong> <span style='color:#A80000; font-size:17px; font-weight:bold;'>{avg_stats['xA']:.2f}</span></div>
 
                     
                     
                 
-            </div>
+             </div>
         """, unsafe_allow_html=True)
    
 
