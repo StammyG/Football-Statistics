@@ -497,7 +497,7 @@ with TabB:
     colB1, colB2 = st.columns([1, 1])  # Adjust these values to control the width ratio
     
     with colB1:
-        player_team = st.selectbox('Select Team',options= players_team,default=players_team['Liverpool'], key= "team_roster" )
+        player_team = st.selectbox('Select Team',options= players_team,default==players_team['Liverpool'], key= "team_roster" )
     
         
     team_roster = player_stats[player_stats['Team']==player_team]
