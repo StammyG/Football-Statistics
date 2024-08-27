@@ -497,7 +497,7 @@ with TabB:
     colB1, colB2 = st.columns([1, 1])  # Adjust these values to control the width ratio
     
     with colB1:
-        player_team = st.selectbox('Select Team',options= players_team, key= "team_roster" )
+        player_team = st.selectbox('Select Team',options= players_team,default=players_team['Manchester City'], key= "team_roster" )
     
         
     team_roster = player_stats[player_stats['Team']==player_team]
@@ -513,16 +513,7 @@ with TabB:
     st.subheader(f'{player_team} Roster')
     
     # Create a layout with columns for player name and stats
-    if 'show_player_matches' not in st.session_state:
-        st.session_state['show_player_matches'] = {}
-    
-    def toggle_visibility(player_id):
-        if player_id in st.session_state['show_player_matches']:
-            # Toggle visibility of player matches
-            st.session_state['show_player_matches'][player_id] = not st.session_state['show_player_matches'][player_id]
-        else:
-            # Initialize visibility to True
-            st.session_state['show_player_matches'][player_id] = True
+   
             
     st.markdown("""
         <style>
