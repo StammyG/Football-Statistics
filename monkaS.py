@@ -25,9 +25,7 @@ YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
 SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
 
 roster = pd.read_csv('Rosters.csv')
-player_stats = pd.read_csv('Player_Stats_EPL2024_cleaned.csv')
-player_stats = pd.merge(player_stats, roster, on='id', how='outer')
-player_stats = player_stats.rename(columns={'id':'player_id'})
+player_stats = pd.read_csv('Top5Leagues_player_stats2024.csv')
 player_stats['Team'] = player_stats['Team'].fillna('Random')
 new_order = ['Match','round','minutes','SoT','Shots','Tackles','fouls_commited','fouls_received','Goals','xG','Assists','xA','Team','Name','Sofascore_Name','player_id']
 player_stats = player_stats[new_order]
@@ -497,7 +495,9 @@ with TabB:
     colB1, colB2 = st.columns([1, 1])  # Adjust these values to control the width ratio
     
     with colB1:
-        player_team = st.selectbox('Select Team',options= players_team,index = 2, key= "team_roster")
+        player_competition = st.multiselect('Select Competition',options =[comp for comp in player_stats['Competition'].unique() if pd.notna(comp)],key="team_competition")
+        team_competition = player_stats[player_stats['Competition'].isin(player_competition)]
+        player_team = st.selectbox('Select Team',options=team_competition['Team'].unique(), key= "team_roster" )
     
         
     team_roster = player_stats[player_stats['Team']==player_team]
@@ -505,7 +505,7 @@ with TabB:
     unique_roster = filtered_team_roster.drop_duplicates(subset=['player_id'])
     def calculate_average_stats(player_id):
         player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-        avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','xG','Assists','xA',"minutes"]].mean()
+        avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','Assists',"minutes"]].mean()
         return avg_stats
     
     
@@ -551,9 +551,7 @@ with TabB:
                             <div style='font-size:14px;color:black;'><strong>Fouls Received:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_received']:.2f}</span></div>
                             <div style='font-size:14px;color:black;'><strong>Tackles:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
                             <div style='font-size:14px;color:black;'><strong>Goals:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Goals']:.2f}</span></div>
-                            <div style='font-size:14px;color:black;'><strong>xG:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['xG']:.2f}</span></div>
                             <div style='font-size:14px;color:black;'><strong>Assists:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Assists']:.2f}</span></div>
-                            <div style='font-size:14px;color:black;'><strong>xA:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['xA']:.2f}</span></div>
 
                     
                     
