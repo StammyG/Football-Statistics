@@ -563,7 +563,7 @@ with TabB:
          st.write(player_matches)
    
 
-        
+    st.write(filtered_team_roster)
         
 
 
