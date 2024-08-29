@@ -494,8 +494,8 @@ with TabB:
     colB1, colB2 = st.columns([1, 1])  # Adjust these values to control the width ratio
     
     with colB1:
-        player_competition = st.multiselect('Select Competition',options =[comp for comp in player_stats['Competition'].unique() if pd.notna(comp)],key="team_competition")
-        team_competition = player_stats[player_stats['Competition'].isin(player_competition)]
+        player_competition = st.selectbox('Select Competition',options =[comp for comp in player_stats['Competition'].unique() if pd.notna(comp)],key="team_competition")
+        team_competition = player_stats[player_stats['Competition']== player_competition]
         player_team = st.selectbox('Select Team',options=team_competition['Team'].unique(), key= "team_roster" )
     
         
