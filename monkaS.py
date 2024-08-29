@@ -26,7 +26,7 @@ SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
 
 player_stats = pd.read_csv('Top5Leagues_player_stats2024.csv')
 player_stats['Team'] = player_stats['Team'].fillna('Random')
-new_order = ['Match','round','minutes','SoT','Shots','Tackles','fouls_commited','fouls_received','Goals','Assists','Team','Name','Sofascore_Name','player_id']
+new_order = ['Match','round','minutes','SoT','Shots','Tackles','fouls_commited','fouls_received','Goals','Assists','Team','Competition','Name','Sofascore_Name','player_id']
 player_stats = player_stats[new_order]
 
 #tabs
