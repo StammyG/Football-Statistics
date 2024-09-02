@@ -528,6 +528,10 @@ with TabB:
         
         </style>
     """, unsafe_allow_html=True)
+    player_id_counts = player_data['player_id'].value_counts()
+    player_id_counts_df[Importance] = player_data['player_id'].map(player_id_counts)
+    
+    
     for _, player in unique_roster.iterrows():
         player_id = player['player_id']
         player_name = player['Sofascore_Name']
@@ -564,7 +568,7 @@ with TabB:
    
 
     
-        
+        st.write(player_id_counts_df)
 
 
 
