@@ -502,7 +502,7 @@ with TabB:
     team_roster = player_stats[player_stats['Team']==player_team]
     filtered_team_roster = team_roster[team_roster['minutes']>10]
     player_id_counts = filtered_team_roster['player_id'].value_counts()
-    filtered_team_roster['Importance'] = (90*filtered_team_roster.groupby('player_id')['SoT'].transform('mean'))+filtered_team_roster['player_id'].map(player_id_counts) + (0.25*filtered_team_roster.groupby('player_id')['minutes'].transform('mean'))
+    filtered_team_roster['Importance'] = (90*filtered_team_roster.groupby('player_id')['SoT'].transform('mean'))+(2*filtered_team_roster['player_id'].map(player_id_counts)) + (0.25*filtered_team_roster.groupby('player_id')['minutes'].transform('mean'))
     unique_roster = filtered_team_roster.drop_duplicates(subset=['player_id'])
     unique_roster = unique_roster.sort_values(by='Importance', ascending=False)
 
