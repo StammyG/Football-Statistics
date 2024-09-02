@@ -529,7 +529,10 @@ with TabB:
         </style>
     """, unsafe_allow_html=True)
   
-    
+    player_id_counts = unique_roster['player_id'].value_counts()
+    unique_roster['frequency'] = unique_roster['player_id'].map(player_id_counts)
+    unique_roster = unique_roster.sort_values(by='frequency', ascending=False)
+
     
     for _, player in unique_roster.iterrows():
         player_id = player['player_id']
