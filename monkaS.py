@@ -501,7 +501,11 @@ with TabB:
         
     team_roster = player_stats[player_stats['Team']==player_team]
     filtered_team_roster = team_roster[team_roster['minutes']>10]
+    player_id_counts = filtered_team_roster['player_id'].value_counts()
+    filtered_team_roster['frequency'] = filtered_team_roster['player_id'].map(player_id_counts)
     unique_roster = filtered_team_roster.drop_duplicates(subset=['player_id'])
+    unique_roster = unique_roster.sort_values(by='frequency', ascending=False)
+
     def calculate_average_stats(player_id):
         player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
         avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','Assists',"minutes"]].mean()
@@ -529,9 +533,7 @@ with TabB:
         </style>
     """, unsafe_allow_html=True)
   
-    player_id_counts = unique_roster['player_id'].value_counts()
-    unique_roster['frequency'] = unique_roster['player_id'].map(player_id_counts)
-    unique_roster = unique_roster.sort_values(by='frequency', ascending=False)
+   
 
     
     for _, player in unique_roster.iterrows():
@@ -567,7 +569,6 @@ with TabB:
         with st.expander(f"Show all matches that {player_name} featured in"):
          player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
          st.write(player_matches)
-st.write(unique_roster)
 
     
        
