@@ -508,8 +508,8 @@ with TabB:
     
     num_rows_slider = st.slider('Last _ Matches:', 
                            min_value=1, 
-                           max_value=50, 
-                           value=50, 
+                           max_value=150, 
+                           value=150, 
                            step=1,key="slider")
     def calculate_average_stats(player_id):
         player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
