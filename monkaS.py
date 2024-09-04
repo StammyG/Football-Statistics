@@ -506,8 +506,8 @@ with TabB:
     unique_roster = filtered_team_roster.drop_duplicates(subset=['player_id'])
     unique_roster = unique_roster.sort_values(by='Importance', ascending=False)
 
-    def calculate_average_stats(player_id,df):
-        player_data = df[df['player_id'] == player_id]
+    def calculate_average_stats(player_id):
+        player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
         avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','Assists',"minutes"]].mean()
         return avg_stats
     
@@ -549,7 +549,7 @@ with TabB:
                            value=100, 
                            step=1)
         filtered_team_roster = filtered_team_roster.head(num_rows_slider) 
-        avg_stats = calculate_average_stats(player_id,filtered_team_roster)
+        avg_stats = calculate_average_stats(player_id)
          
         st.markdown(f"""
                 <div class='player-stats'>
