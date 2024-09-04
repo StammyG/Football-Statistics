@@ -534,7 +534,11 @@ with TabB:
     """, unsafe_allow_html=True)
   
    
-
+    num_rows_slider = st.slider('Last _ Matches:', 
+                           min_value=1, 
+                           max_value=100, 
+                           value=100, 
+                           step=1,key="slider")
     
     for _, player in unique_roster.iterrows():
         player_id = player['player_id']
@@ -543,11 +547,7 @@ with TabB:
         
         # Create columns for player name and stats
         # Create columns for player name and stats
-        num_rows_slider = st.slider('Last _ Matches:', 
-                           min_value=1, 
-                           max_value=100, 
-                           value=100, 
-                           step=1,key="slider")
+        
         filtered_team_roster = filtered_team_roster.head(num_rows_slider) 
         avg_stats = calculate_average_stats(player_id)
          
