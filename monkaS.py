@@ -505,10 +505,17 @@ with TabB:
     filtered_team_roster['Importance'] = (90*filtered_team_roster.groupby('player_id')['SoT'].transform('mean'))+(4*filtered_team_roster['player_id'].map(player_id_counts)) + (0.25*filtered_team_roster.groupby('player_id')['minutes'].transform('mean'))
     unique_roster = filtered_team_roster.drop_duplicates(subset=['player_id'])
     unique_roster = unique_roster.sort_values(by='Importance', ascending=False)
-
+    
+    num_rows_slider = st.slider('Last _ Matches:', 
+                           min_value=1, 
+                           max_value=50, 
+                           value=50, 
+                           step=1,key="slider")
     def calculate_average_stats(player_id):
         player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
+        player_data = player_data.head(num_rows_slider)
         avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','Assists',"minutes"]].mean()
+        
         return avg_stats
     
     
@@ -534,12 +541,6 @@ with TabB:
     """, unsafe_allow_html=True)
   
    
-    num_rows_slider = st.slider('Last _ Matches:', 
-                           min_value=1, 
-                           max_value=50, 
-                           value=50, 
-                           step=1,key="slider")
-    filtered_team_roster = filtered_team_roster.head(num_rows_slider)
     for _, player in unique_roster.iterrows():
         player_id = player['player_id']
         player_name = player['Sofascore_Name']
@@ -571,7 +572,7 @@ with TabB:
         """, unsafe_allow_html=True)
         
         with st.expander(f"Show all matches that {player_name} featured in"):
-         player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
+         player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)
          st.write(player_matches)
 
     
