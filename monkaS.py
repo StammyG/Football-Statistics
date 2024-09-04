@@ -548,7 +548,6 @@ with TabB:
         # Create columns for player name and stats
         # Create columns for player name and stats
         
-        filtered_team_roster = filtered_team_roster.head(num_rows_slider) 
         avg_stats = calculate_average_stats(player_id)
          
         st.markdown(f"""
