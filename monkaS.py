@@ -513,7 +513,7 @@ with TabB:
                            step=1,key="slider")
     def calculate_average_stats(player_id):
         player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-        player_data = player_data.head(num_rows_slider)
+        #player_data = player_data.head(num_rows_slider)
         avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','Assists',"minutes"]].mean()
         
         return avg_stats
@@ -573,6 +573,7 @@ with TabB:
         
         with st.expander(f"Show all matches that {player_name} featured in"):
          player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)
+         #player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)   
          st.write(player_matches)
 
     
