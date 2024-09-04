@@ -536,10 +536,10 @@ with TabB:
    
     num_rows_slider = st.slider('Last _ Matches:', 
                            min_value=1, 
-                           max_value=100, 
-                           value=100, 
+                           max_value=50, 
+                           value=50, 
                            step=1,key="slider")
-    
+    filtered_team_roster = filtered_team_roster.head(num_rows_slider)
     for _, player in unique_roster.iterrows():
         player_id = player['player_id']
         player_name = player['Sofascore_Name']
@@ -549,7 +549,7 @@ with TabB:
         # Create columns for player name and stats
         
         avg_stats = calculate_average_stats(player_id)
-         
+        
         st.markdown(f"""
                 <div class='player-stats'>
                     <div style='font-size:14px; margin-top:0.5px;'>
