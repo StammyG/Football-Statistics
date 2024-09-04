@@ -547,7 +547,7 @@ with TabB:
                            min_value=1, 
                            max_value=100, 
                            value=100, 
-                           step=1)
+                           step=1,key="slider")
         filtered_team_roster = filtered_team_roster.head(num_rows_slider) 
         avg_stats = calculate_average_stats(player_id)
          
