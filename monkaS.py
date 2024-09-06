@@ -576,7 +576,7 @@ with TabB:
          #player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)   
          st.write(player_matches)
 
-    
+tab1, tab2, tab3 = st.tabs(["player shots on target", "shots","tackles"])
        
 
 
