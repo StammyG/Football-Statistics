@@ -498,7 +498,7 @@ with TabB:
         team_competition = player_stats[player_stats['Competition']== player_competition]
         player_team = st.selectbox('Select Team',options=team_competition['Team'].unique(), key= "team_roster" )
         id_to_remove = st.multiselect(
-            'Select ids of matches you want removed', options=list(range(1, 100001)), default= 0,key='id_remover'
+            'Select ids of matches you want removed', options=list(range(1, 100001)), default= [0],key='id_remover'
         )
         
     team_roster = player_stats[player_stats['Team']==player_team]
