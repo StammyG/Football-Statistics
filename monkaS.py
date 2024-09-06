@@ -497,9 +497,7 @@ with TabB:
         player_competition = st.selectbox('Select Competition',options =[comp for comp in player_stats['Competition'].unique() if pd.notna(comp)],key="team_competition")
         team_competition = player_stats[player_stats['Competition']== player_competition]
         player_team = st.selectbox('Select Team',options=team_competition['Team'].unique(), key= "team_roster" )
-        id_to_remove = st.multiselect(
-            'Select ids of matches you want removed', options=list(range(1, 100001)), default= [0],key='id_remover'
-        )
+       
         
     team_roster = player_stats[player_stats['Team']==player_team]
     filtered_team_roster = team_roster[team_roster['minutes']>10]
@@ -515,7 +513,6 @@ with TabB:
                            step=1,key="slider")
     def calculate_average_stats(player_id):
         player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-        player_data = player_data[~player_data['id'].isin(id_to_remove)] 
         #player_data = player_data.head(num_rows_slider)
         avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','Assists',"minutes"]].mean()
         
