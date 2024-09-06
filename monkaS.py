@@ -506,7 +506,7 @@ with TabB:
     unique_roster = filtered_team_roster.drop_duplicates(subset=['player_id'])
     unique_roster = unique_roster.sort_values(by='Importance', ascending=False)
     
-    num_rows_slider = st.slider('Last _ Matches:', 
+    #num_rows_slider = st.slider('Last _ Matches:', 
                            min_value=1, 
                            max_value=150, 
                            value=150, 
