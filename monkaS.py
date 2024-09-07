@@ -161,8 +161,8 @@ with TabA:
         st.markdown(("**League Average Yellow Cards per Match: "  f"{Average_YellowCards:.1f}**"))
     
         
-        venue_filtered_data = venue_filtered_data.head(2*num_rows_slider_teams)
-        venue_away_filtered_data = venue_away_filtered_data.head(2*num_rows_slider_teams)
+        
+       
         tab1_1, tab1_2, tab1_3 = st.tabs(["Home Data", "Away Data","Standard Deviation"])
     
         with tab1_1:
