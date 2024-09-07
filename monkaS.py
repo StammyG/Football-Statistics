@@ -77,7 +77,8 @@ with TabA:
         against_filtered_data = venue_filtered_data[venue_filtered_data["ForAgainst"] == "Against"]
         for_away_filtered_data = venue_away_filtered_data[venue_away_filtered_data["ForAgainst"] == "For"]
         against_away_filtered_data = venue_away_filtered_data[venue_away_filtered_data["ForAgainst"] == "Against"]
-    
+        for_away_filtered_data = for_away_filtered_data.sort_values(by='Date',ascending = False)
+        against_away_filtered_data = against_away_filtered_data.sort_values(by='Date',ascending = False)
         def write_mean_stat_to_columns(stat, column, selected_data):
             stat_mean = selected_data[stat].mean()
             column.write(f"{stat_mean:.1f}")
