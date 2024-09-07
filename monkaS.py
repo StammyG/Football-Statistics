@@ -95,6 +95,14 @@ with TabA:
         for_away_filtered_data = for_away_filtered_data.head(num_rows_slider_teams)
         against_away_filtered_data = against_away_filtered_data.head(num_rows_slider_teams)
         
+        home_db = pd.concat([for_filtered_data,against_filtered_data],axis=0)
+        home_db = home_db.sort_values(by='Date',ascending = False)
+        home_db = home_db.head(2*num_rows_slider_teams)
+        away_db = pd.concat([for_away_filtered_data,against_away_filtered_data],axis=0)
+        away_db = away_db.sort_values(by='Date',ascending = False)
+        away_db = away_db.head(2*num_rows_slider_teams)
+        
+        
         def write_mean_stat_to_columns(stat, column, selected_data):
             stat_mean = selected_data[stat].mean()
             column.write(f"{stat_mean:.1f}")
@@ -179,11 +187,11 @@ with TabA:
     
         with tab1_1:
             st.write("Home Data")
-            st.dataframe(home_data)
+            st.dataframe(home_db)
     
         with tab1_2:
             st.write("Away Data")
-            st.dataframe(away_data)
+            st.dataframe(away_db)
     
         with tab1_3:
             st.markdown('**Stats for selected teams**')
