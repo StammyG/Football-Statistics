@@ -28,7 +28,7 @@ player_stats = pd.read_csv('Top5Leagues_player_stats2024_updated.csv')
 player_stats['Team'] = player_stats['Team'].fillna('Random')
 new_order = ['Match','round','minutes','SoT','Shots','Tackles','fouls_commited','fouls_received','Goals','Assists','Team','Competition','Name','Sofascore_Name','player_id']
 player_stats = player_stats[new_order]
-data['Date'] = pd.to_datetime(data['Date'])
+
 
 #tabs
 
@@ -72,11 +72,7 @@ with TabA:
         venues = away_filtered_data['Venue'].unique()
         venue_away = st.multiselect('Select Venue for Away Team', options=venues)
         venue_away_filtered_data = away_filtered_data[away_filtered_data['Venue'].isin(venue_away)]
-        num_rows_slider_teams = st.number_input('Last _ Matches:', 
-                           min_value=1, 
-                           max_value=150, 
-                           value=150, 
-                           step=1,key="slider_teams")
+        
     
      
         for_filtered_data = venue_filtered_data[venue_filtered_data["ForAgainst"] == "For"]
@@ -84,24 +80,7 @@ with TabA:
         for_away_filtered_data = venue_away_filtered_data[venue_away_filtered_data["ForAgainst"] == "For"]
         against_away_filtered_data = venue_away_filtered_data[venue_away_filtered_data["ForAgainst"] == "Against"]
         
-        for_filtered_data = for_filtered_data.sort_values(by='Date',ascending = False)
-        for_filtered_data = for_filtered_data.head(num_rows_slider_teams)
         
-        against_filtered_data = against_filtered_data.sort_values(by='Date',ascending = False)
-        against_filtered_data = against_filtered_data.head(num_rows_slider_teams)
-        
-        for_away_filtered_data = for_away_filtered_data.sort_values(by='Date',ascending = False)
-        against_away_filtered_data = against_away_filtered_data.sort_values(by='Date',ascending = False)
-        
-        for_away_filtered_data = for_away_filtered_data.head(num_rows_slider_teams)
-        against_away_filtered_data = against_away_filtered_data.head(num_rows_slider_teams)
-        
-        home_db = pd.concat([for_filtered_data,against_filtered_data],axis=0)
-        home_db = home_db.sort_values(by='Date',ascending = False)
-        home_db = home_db.head(2*num_rows_slider_teams)
-        away_db = pd.concat([for_away_filtered_data,against_away_filtered_data],axis=0)
-        away_db = away_db.sort_values(by='Date',ascending = False)
-        away_db = away_db.head(2*num_rows_slider_teams)
         
         
         def write_mean_stat_to_columns(stat, column, selected_data):
@@ -188,11 +167,11 @@ with TabA:
     
         with tab1_1:
             st.write("Home Data")
-            st.dataframe(home_db)
+            st.dataframe(venue_filtered_data)
     
         with tab1_2:
             st.write("Away Data")
-            st.dataframe(away_db)
+            st.dataframe(venue_away_filtered_data)
     
         with tab1_3:
             st.markdown('**Stats for selected teams**')
