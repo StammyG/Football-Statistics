@@ -67,7 +67,11 @@ with TabA:
         away_opponents = st.multiselect('Select Opponents', options=away_filtered_data['Opponent'].unique(), default=away_filtered_data['Opponent'].unique(), key='away_opponents'
         )
         away_filtered_data = away_filtered_data[away_filtered_data['Opponent'].isin(away_opponents)]
-    
+        num_rows_slider_teams = st.number_input('Last _ Matches:', 
+                           min_value=1, 
+                           max_value=150, 
+                           value=150, 
+                           step=1,key="slider_teams")
         venues = away_filtered_data['Venue'].unique()
         venue_away = st.multiselect('Select Venue for Away Team', options=venues)
         venue_away_filtered_data = away_filtered_data[away_filtered_data['Venue'].isin(venue_away)]
@@ -79,6 +83,8 @@ with TabA:
         against_away_filtered_data = venue_away_filtered_data[venue_away_filtered_data["ForAgainst"] == "Against"]
         for_away_filtered_data = for_away_filtered_data.sort_values(by='Date',ascending = False)
         against_away_filtered_data = against_away_filtered_data.sort_values(by='Date',ascending = False)
+        for_away_filtered_data = for_away_filtered_data.head(num_rows_slider_teams)
+        against_away_filtered_data = against_away_filtered_data.head(num_rows_slider_teams)
         def write_mean_stat_to_columns(stat, column, selected_data):
             stat_mean = selected_data[stat].mean()
             column.write(f"{stat_mean:.1f}")
@@ -157,7 +163,8 @@ with TabA:
         st.markdown(("**League Average Yellow Cards per Match: "  f"{Average_YellowCards:.1f}**"))
     
         
-    
+        venue_filtered_data = venue_filtered_data.head(2*num_rows_slider_teams)
+        venue_away_filtered_data = venue_away_filtered_data.head(2*num_rows_slider_teams)
         tab1_1, tab1_2, tab1_3 = st.tabs(["Home Data", "Away Data","Standard Deviation"])
     
         with tab1_1:
