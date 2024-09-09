@@ -502,7 +502,7 @@ with TabB:
     with colB1:
         player_competition = st.selectbox('Select Competition',options =[comp for comp in player_stats['Competition'].unique() if pd.notna(comp)],key="team_competition")
         team_competition = player_stats[player_stats['Competition']== player_competition]
-        season = st.multiselect('Select Season for player Stats', options=team_competition['Season'])
+        season = st.multiselect('Select Season for player Stats', options=team_competition['Season'].unique(),key='player_season')
         player_team = st.selectbox('Select Team',options=team_competition['Team'].unique(), key= "team_roster" )
         
 
