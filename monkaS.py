@@ -502,10 +502,12 @@ with TabB:
     with colB1:
         player_competition = st.selectbox('Select Competition',options =[comp for comp in player_stats['Competition'].unique() if pd.notna(comp)],key="team_competition")
         team_competition = player_stats[player_stats['Competition']== player_competition]
+        season = st.multiselect('Select Season for player Stats', options=team_competition['Season'])
         player_team = st.selectbox('Select Team',options=team_competition['Team'].unique(), key= "team_roster" )
-       
         
-    team_roster = player_stats[player_stats['Team']==player_team]
+
+        
+    team_roster = player_stats[(player_stats['Team'] == player_team) & (player_stats['Season'].isin(season))]
     filtered_team_roster = team_roster[team_roster['minutes']>10]
     player_id_counts = filtered_team_roster['player_id'].value_counts()
     filtered_team_roster['Importance'] = (90*filtered_team_roster.groupby('player_id')['SoT'].transform('mean'))+(4*filtered_team_roster['player_id'].map(player_id_counts)) + (0.25*filtered_team_roster.groupby('player_id')['minutes'].transform('mean'))
