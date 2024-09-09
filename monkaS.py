@@ -520,6 +520,8 @@ with TabB:
                            value=150, 
                            step=1,key="slider")
     filtered_team_roster['chronological_order'] = filtered_team_roster['Season'] + (0.01*filtered_team_roster['round'])
+    filtered_team_roster=filtered_team_roster.sort_values(by='chronological_order', ascending=False)
+
     def calculate_average_stats(player_id):
         player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
         player_data = player_data.head(num_rows_slider)
