@@ -538,8 +538,9 @@ with TabB:
         return avg_stats
     def calculate_suggested_totals_shots(player_id):
         avg_stats = calculate_average_stats(player_id)
-        avg_stats['Shots'] +((avg_stats['Shots']*supremacy)/totals)
-        
+        suggested_shots = avg_stats['Shots'] +((avg_stats['Shots']*supremacy)/totals)
+
+        return suggested_shots
     
     # Streamlit app layout
     st.subheader(f'{player_team} Roster')
