@@ -522,8 +522,8 @@ with TabB:
     filtered_team_roster['chronological_order'] = filtered_team_roster['Season'] + (0.01*filtered_team_roster['round'])
     filtered_team_roster=filtered_team_roster.sort_values(by='chronological_order', ascending=False)
     supremacy = st.number_input('Supremacy:', 
-                           min_value=-6, 
-                           max_value=6, 
+                            
+                           
                            value=0, 
                            step=0.05,key="supremacy")
     totals = st.number_input('Totals:', 
