@@ -536,7 +536,7 @@ with TabB:
         avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','Assists',"minutes"]].mean()
         
         return avg_stats
-    def calculate_suggested_totals_shots(player_id)
+    def calculate_suggested_totals_shots(player_id):
         avg_stats = calculate_average_stats(player_id)
         avg_stats['Shots'] +((avg_stats['Shots']*supremacy)/totals)
         
