@@ -617,7 +617,7 @@ with TabB:
                                     <div style='font-size:17px;color:black;'><strong></strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{player_name}</span></div>
                                     <div style='font-size:14px;color:black;'><strong>Minutes:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['minutes']:.2f}</span></div>
                                     <div style='font-size:14px;color:black;'><strong>Shots on Target:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['SoT']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Shots:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{suggested_shots:.2f}</span></div>
+                                    <div style='font-size:14px;color:black;'><strong>Shots:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{suggested_shots.2f}</span></div>
                                     <div style='font-size:14px;color:black;'><strong>Fouls Commited:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_commited']:.2f}</span></div>
                                     <div style='font-size:14px;color:black;'><strong>Fouls Received:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_received']:.2f}</span></div>
                                     <div style='font-size:14px;color:black;'><strong>Tackles:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
