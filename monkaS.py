@@ -524,7 +524,7 @@ with TabB:
     supremacy = st.number_input('Supremacy:', 
                             
                            
-                           value=0, 
+                           
                            step=0.05,key="supremacy")
     totals = st.number_input('Totals:', 
                            min_value=1, 
