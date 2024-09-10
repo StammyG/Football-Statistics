@@ -601,39 +601,39 @@ with TabB:
                  st.write(player_matches)
         with TabB6:    
             for _, player in unique_roster.iterrows():
-            player_id = player['player_id']
-            player_name = player['Sofascore_Name']
+                player_id = player['player_id']
+                player_name = player['Sofascore_Name']
+                
+                
+                # Create columns for player name and stats
+                # Create columns for player name and stats
+                
+                avg_stats = calculate_average_stats(player_id)
+                suggested_shots = calculate_suggested_totals_shots(player_id)
+                st.markdown(f"""
+                            <div class='player-stats'>
+                                <div style='font-size:14px; margin-top:0.5px;'>
+                                    <div style='display: flex; flex-wrap: wrap; gap: 8px;'>
+                                        <div style='font-size:17px;color:black;'><strong></strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{player_name}</span></div>
+                                        <div style='font-size:14px;color:black;'><strong>Minutes:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['minutes']:.2f}</span></div>
+                                        <div style='font-size:14px;color:black;'><strong>Shots on Target:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['SoT']:.2f}</span></div>
+                                        <div style='font-size:14px;color:black;'><strong>Shots:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{suggested_shots:.2f}</span></div>
+                                        <div style='font-size:14px;color:black;'><strong>Fouls Commited:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_commited']:.2f}</span></div>
+                                        <div style='font-size:14px;color:black;'><strong>Fouls Received:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_received']:.2f}</span></div>
+                                        <div style='font-size:14px;color:black;'><strong>Tackles:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
+                                        <div style='font-size:14px;color:black;'><strong>Goals:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Goals']:.2f}</span></div>
+                                        <div style='font-size:14px;color:black;'><strong>Assists:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Assists']:.2f}</span></div>
             
-            
-            # Create columns for player name and stats
-            # Create columns for player name and stats
-            
-            avg_stats = calculate_average_stats(player_id)
-            suggested_shots = calculate_suggested_totals_shots(player_id)
-            st.markdown(f"""
-                        <div class='player-stats'>
-                            <div style='font-size:14px; margin-top:0.5px;'>
-                                <div style='display: flex; flex-wrap: wrap; gap: 8px;'>
-                                    <div style='font-size:17px;color:black;'><strong></strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{player_name}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Minutes:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['minutes']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Shots on Target:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['SoT']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Shots:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{suggested_shots:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Fouls Commited:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_commited']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Fouls Received:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_received']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Tackles:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Goals:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Goals']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Assists:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Assists']:.2f}</span></div>
-        
-          
+              
+                            
                         
-                    
-                     </div>
-                """, unsafe_allow_html=True)
-               
-                with st.expander(f"Show all matches that {player_name} featured in"):
-                 player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-                 player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)   
-                 st.write(player_matches)
+                         </div>
+                    """, unsafe_allow_html=True)
+                   
+                    with st.expander(f"Show all matches that {player_name} featured in"):
+                     player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
+                     player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)   
+                     st.write(player_matches)
 
        
 
