@@ -630,10 +630,10 @@ with TabB:
                              </div>
                          """, unsafe_allow_html=True)
                    
-                with st.expander(f"Show all matches that {player_name} featured in"):
-                     player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-                     player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)   
-                     st.write(player_matches)
+            with st.expander(f"Show all matches that {player_name} featured in"):
+                    player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
+                    player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)   
+                    st.write(player_matches)
 
        
 
