@@ -529,7 +529,7 @@ with TabB:
     totals = st.number_input('Totals:', 
                            min_value=1, 
                            max_value=7, 
-                           value=2.7, 
+                           value=2, 
                            step=0.05,key="Totals")
     def calculate_average_stats(player_id):
         player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
