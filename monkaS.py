@@ -589,7 +589,7 @@ with TabB:
                 
              </div>
         """, unsafe_allow_html=True)
-        player_list.append([player_name, avg_stats['minutes'], avg_stats['SoT'], avg_stats['Shots']+((avg_stats['Shots']*supremacy)/totals), avg_stats['fouls_commited'], avg_stats['fouls_received'], avg_stats['Tackles'], avg_stats['Goals'], avg_stats['Assists']])
+        #player_list.append([player_name, avg_stats['minutes'], avg_stats['SoT'], avg_stats['Shots']+((avg_stats['Shots']*supremacy)/totals), avg_stats['fouls_commited'], avg_stats['fouls_received'], avg_stats['Tackles'], avg_stats['Goals'], avg_stats['Assists']])
         with st.expander(f"Show all matches that {player_name} featured in"):
          player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
          player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)   
