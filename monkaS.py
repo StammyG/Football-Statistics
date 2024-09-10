@@ -592,7 +592,7 @@ with TabB:
               
                             
                         
-                         </div>
+                         
                     """, unsafe_allow_html=True)
                
             with st.expander(f"Show all matches that {player_name} featured in"):
