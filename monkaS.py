@@ -521,7 +521,16 @@ with TabB:
                            step=1,key="slider")
     filtered_team_roster['chronological_order'] = filtered_team_roster['Season'] + (0.01*filtered_team_roster['round'])
     filtered_team_roster=filtered_team_roster.sort_values(by='chronological_order', ascending=False)
-
+    supremacy = st.number_input('Supremacy:', 
+                           min_value=-6, 
+                           max_value=6, 
+                           value=0, 
+                           step=0.05,key="supremacy")
+    totals = st.number_input('Totals:', 
+                           min_value=1, 
+                           max_value=7, 
+                           value=2.7, 
+                           step=0.05,key="Totals")
     def calculate_average_stats(player_id):
         player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
         player_data = player_data.head(num_rows_slider)
@@ -575,17 +584,19 @@ with TabB:
                             <div style='font-size:14px;color:black;'><strong>Tackles:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
                             <div style='font-size:14px;color:black;'><strong>Goals:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Goals']:.2f}</span></div>
                             <div style='font-size:14px;color:black;'><strong>Assists:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Assists']:.2f}</span></div>
-
-                    
+    
+      
                     
                 
              </div>
         """, unsafe_allow_html=True)
-        
+        player_stats_list.append([player_name, avg_stats['minutes'], avg_stats['SoT'], avg_stats['Shots']+((avg_stats['Shots']*supremacy)/totals), avg_stats['fouls_commited'], avg_stats['fouls_received'], avg_stats['Tackles'], avg_stats['Goals'], avg_stats['Assists']])
         with st.expander(f"Show all matches that {player_name} featured in"):
          player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
          player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)   
-         st.write(player_matches)
+         st.write(player_matches)       
+    Suggested_Totals = pd.DataFrame(player_stats_list, columns=['Player Name', 'Minutes', 'Shots on Target', 'Shots', 'Fouls Commited', 'Fouls Received', 'Tackles', 'Goals', 'Assists'])
+    st.write(Suggested_Totals)
 
 
        
