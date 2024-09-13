@@ -167,7 +167,7 @@ with TabA:
     
         with tab1_1:
             st.write("Home Data")
-            st.dataframe(venue_filtered_data)
+            st.dataframe(against_filtered_data)
     
         with tab1_2:
             st.write("Away Data")
