@@ -25,6 +25,8 @@ data.loc[data['ForAgainst'] == 'Against', 'Venue'] = data.loc[data['ForAgainst']
 
 YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
 SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
+YellowCards_Data.loc[YellowCards_Data['ForAgainst'] == 'Against', 'Venue'] = YellowCards_Data.loc[YellowCards_Data['ForAgainst'] == 'Against', 'Venue'].map({'Home': 'Away', 'Away': 'Home'})
+
 
 player_stats = pd.read_csv('Top5Leagues_player_stats_updated.csv')
 player_stats['Team'] = player_stats['Team'].fillna('Random')
@@ -238,7 +240,7 @@ with TabA:
         venues = filtered_YellowCards_Data['Venue'].unique()
         venue = st.multiselect('Select Venue for Home Team', options=venues, key="Home_Venue_Cards")
         venue_filtered_YellowCards_Data = filtered_YellowCards_Data[filtered_YellowCards_Data['Venue'].isin(venue)]
-        venue_filtered_YellowCards_Data_against = filtered_YellowCards_Data[~filtered_YellowCards_Data['Venue'].isin(venue)]
+        venue_filtered_YellowCards_Data_against = filtered_YellowCards_Data[filtered_YellowCards_Data['Venue'].isin(venue)]
 
         away_team = st.selectbox('Select Away Team', options=season_filtered_YellowCards_Data['Team'].unique(),key="Away_Team_Cards")
         away_filtered_YellowCards_Data = season_filtered_YellowCards_Data[season_filtered_YellowCards_Data['Team'] == away_team]
@@ -249,7 +251,7 @@ with TabA:
         venues = away_filtered_YellowCards_Data['Venue'].unique()
         venue_away = st.multiselect('Select Venue for Away Team', options=venues,key="Away_Venue_Cards")
         venue_away_filtered_YellowCards_Data = away_filtered_YellowCards_Data[away_filtered_YellowCards_Data['Venue'].isin(venue_away)]
-        venue_away_filtered_YellowCards_Data_against = away_filtered_YellowCards_Data[~away_filtered_YellowCards_Data['Venue'].isin(venue_away)]
+        venue_away_filtered_YellowCards_Data_against = away_filtered_YellowCards_Data[away_filtered_YellowCards_Data['Venue'].isin(venue_away)]
      
         for_filtered_YellowCards_Data = venue_filtered_YellowCards_Data[venue_filtered_YellowCards_Data["ForAgainst"] == "For"]
         against_filtered_YellowCards_Data = venue_filtered_YellowCards_Data_against[venue_filtered_YellowCards_Data_against["ForAgainst"] == "Against"]
