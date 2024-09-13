@@ -167,11 +167,11 @@ with TabA:
     
         with tab1_1:
             st.write("Home Data")
-            st.dataframe(against_filtered_data)
+            st.dataframe(for_filtered_data)
     
         with tab1_2:
             st.write("Away Data")
-            st.dataframe(against_away_filtered_data )
+            st.dataframe(for_away_filtered_data )
     
         with tab1_3:
             st.markdown('**Stats for selected teams**')
