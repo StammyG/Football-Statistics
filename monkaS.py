@@ -21,6 +21,8 @@ data = load_data(db_csv)
 YellowCards_Data = pd.read_csv("SusLeagues_Cards_2024_2.csv")
 SuperLeague_Data = pd.read_csv('SuperLeague_Stats_Updated_Gameweek_final.csv')
 data['Season'] = data['Season'].astype(str)
+data.loc[df['ForAgainst'] == 'Against', 'Venue'] = data.loc[df['ForAgainst'] == 'Against', 'Venue'].map({'Home': 'Away', 'Away': 'Home'})
+
 YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
 SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
 
@@ -28,6 +30,7 @@ player_stats = pd.read_csv('Top5Leagues_player_stats_updated.csv')
 player_stats['Team'] = player_stats['Team'].fillna('Random')
 new_order = ['Match','round','minutes','SoT','Shots','Tackles','fouls_commited','fouls_received','Goals','Assists','Team','Competition','Name','Sofascore_Name','player_id','Season']
 player_stats = player_stats[new_order]
+
 
 
 #tabs
