@@ -168,12 +168,13 @@ with TabA:
     
         with tab1_1:
             st.write("Home Data")
-            st.dataframe(for_filtered_data)
+            #st.dataframe(for_filtered_data)
+            st.write("Under Construction")
     
         with tab1_2:
             st.write("Away Data")
-            st.dataframe(against_away_filtered_data )
-    
+            #st.dataframe(against_away_filtered_data )
+            st.write("Under Construction")
         with tab1_3:
             st.markdown('**Stats for selected teams**')
             header_columns = st.columns(3)
@@ -337,11 +338,12 @@ with TabA:
         
         with tab2_1:
             st.write("Home Data")
-            st.dataframe(venue_filtered_YellowCards_Data)
-    
+            #st.dataframe(venue_filtered_YellowCards_Data)
+            st.write("Under Construction")
         with tab2_2:
             st.write("Away Data")
-            st.dataframe(venue_away_filtered_YellowCards_Data)
+            #st.dataframe(venue_away_filtered_YellowCards_Data)
+            st.write("Under Construction")
         with tab3_2:
             st.subheader('Stats of selected teams against selected opponents')
             header_columns = st.columns(3)
