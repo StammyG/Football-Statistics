@@ -78,7 +78,7 @@ with TabA:
      
         for_filtered_data = venue_filtered_data[venue_filtered_data["ForAgainst"] == "For"]
         against_filtered_data = venue_filtered_data[venue_filtered_data["ForAgainst"] == "Against"]
-        for_away_filtered_data = venue_away_filtered_data[against_venue_filtered_data["ForAgainst"] == "For"]
+        for_away_filtered_data = against_venue_filtered_data[against_venue_filtered_data["ForAgainst"] == "For"]
         against_away_filtered_data = against_venue_away_filtered_data[against_venue_away_filtered_data["ForAgainst"] == "Against"]
         
         
