@@ -168,8 +168,8 @@ with TabA:
     
         with tab1_1:
             st.write("Home Data")
-            #st.dataframe(for_filtered_data)
-            st.write("Under Construction")
+            st.dataframe(data)
+            #st.write("Under Construction")
     
         with tab1_2:
             st.write("Away Data")
@@ -252,7 +252,7 @@ with TabA:
         against_filtered_YellowCards_Data = venue_filtered_YellowCards_Data_against[venue_filtered_YellowCards_Data_against["ForAgainst"] == "Against"]
         for_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "For"]
         against_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data_against[venue_away_filtered_YellowCards_Data_against["ForAgainst"] == "Against"]
-
+        
         
     
     
