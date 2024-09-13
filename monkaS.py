@@ -343,11 +343,11 @@ with TabA:
         
         with tab2_1:
             st.write("Home Data")
-            #st.dataframe(venue_filtered_YellowCards_Data)
+            st.dataframe(venue_filtered_YellowCards_Data)
             st.write("Under Construction")
         with tab2_2:
             st.write("Away Data")
-            #st.dataframe(venue_away_filtered_YellowCards_Data)
+            st.dataframe(venue_away_filtered_YellowCards_Data)
             st.write("Under Construction")
         with tab3_2:
             st.subheader('Stats of selected teams against selected opponents')
