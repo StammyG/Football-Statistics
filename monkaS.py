@@ -21,7 +21,7 @@ data = load_data(db_csv)
 YellowCards_Data = pd.read_csv("SusLeagues_Cards_2024_2.csv")
 SuperLeague_Data = pd.read_csv('SuperLeague_Stats_Updated_Gameweek_final.csv')
 data['Season'] = data['Season'].astype(str)
-data.loc[df['ForAgainst'] == 'Against', 'Venue'] = data.loc[data['ForAgainst'] == 'Against', 'Venue'].map({'Home': 'Away', 'Away': 'Home'})
+data.loc[data['ForAgainst'] == 'Against', 'Venue'] = data.loc[data['ForAgainst'] == 'Against', 'Venue'].map({'Home': 'Away', 'Away': 'Home'})
 
 YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
 SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
