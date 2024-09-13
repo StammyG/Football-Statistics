@@ -234,7 +234,8 @@ with TabA:
         venues = filtered_YellowCards_Data['Venue'].unique()
         venue = st.multiselect('Select Venue for Home Team', options=venues, key="Home_Venue_Cards")
         venue_filtered_YellowCards_Data = filtered_YellowCards_Data[filtered_YellowCards_Data['Venue'].isin(venue)]
-    
+        venue_filtered_YellowCards_Data_against = filtered_YellowCards_Data[~filtered_YellowCards_Data['Venue'].isin(venue)]
+
         away_team = st.selectbox('Select Away Team', options=season_filtered_YellowCards_Data['Team'].unique(),key="Away_Team_Cards")
         away_filtered_YellowCards_Data = season_filtered_YellowCards_Data[season_filtered_YellowCards_Data['Team'] == away_team]
         away_opponents = st.multiselect('Select Opponents', options=away_filtered_YellowCards_Data['Opponent'].unique(), default=away_filtered_YellowCards_Data['Opponent'].unique(), key='away_opponents_cards'
@@ -244,13 +245,14 @@ with TabA:
         venues = away_filtered_YellowCards_Data['Venue'].unique()
         venue_away = st.multiselect('Select Venue for Away Team', options=venues,key="Away_Venue_Cards")
         venue_away_filtered_YellowCards_Data = away_filtered_YellowCards_Data[away_filtered_YellowCards_Data['Venue'].isin(venue_away)]
-    
+        venue_away_filtered_YellowCards_Data_against = away_filtered_YellowCards_Data[~away_filtered_YellowCards_Data['Venue'].isin(venue_away)]
      
         for_filtered_YellowCards_Data = venue_filtered_YellowCards_Data[venue_filtered_YellowCards_Data["ForAgainst"] == "For"]
-        against_filtered_YellowCards_Data = venue_filtered_YellowCards_Data[venue_filtered_YellowCards_Data["ForAgainst"] == "Against"]
+        against_filtered_YellowCards_Data = venue_filtered_YellowCards_Data_against[venue_filtered_YellowCards_Data_against["ForAgainst"] == "Against"]
         for_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "For"]
-        against_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data[venue_away_filtered_YellowCards_Data["ForAgainst"] == "Against"]
-    
+        against_away_filtered_YellowCards_Data = venue_away_filtered_YellowCards_Data_against[venue_away_filtered_YellowCards_Data_against["ForAgainst"] == "Against"]
+
+        
     
     
         League_Average_YellowCards1 = season_filtered_YellowCards_Data.groupby('ForAgainst')['Yellow_Cards'].mean().reset_index()
