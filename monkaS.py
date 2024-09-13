@@ -72,13 +72,13 @@ with TabA:
         venues = away_filtered_data['Venue'].unique()
         venue_away = st.multiselect('Select Venue for Away Team', options=venues)
         venue_away_filtered_data = away_filtered_data[away_filtered_data['Venue'].isin(venue_away)]
-        #against_venue_filtered_data = filtered_data[filtered_data['Venue'].isin(venue)]
+        against_venue_filtered_data = filtered_data[~filtered_data['Venue'].isin(venue)]
         against_venue_away_filtered_data = away_filtered_data[~away_filtered_data['Venue'].isin(venue_away)]
     
      
         for_filtered_data = venue_filtered_data[venue_filtered_data["ForAgainst"] == "For"]
         against_filtered_data = venue_filtered_data[venue_filtered_data["ForAgainst"] == "Against"]
-        for_away_filtered_data = venue_away_filtered_data[venue_away_filtered_data["ForAgainst"] == "For"]
+        for_away_filtered_data = venue_away_filtered_data[against_venue_filtered_data["ForAgainst"] == "For"]
         against_away_filtered_data = against_venue_away_filtered_data[against_venue_away_filtered_data["ForAgainst"] == "Against"]
         
         
