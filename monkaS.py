@@ -178,8 +178,8 @@ with TabA:
     
         with tab1_2:
             st.write("Away Data")
-            #st.dataframe(venue_away_filtered_data)
-            st.write("Under Construction")
+            st.dataframe(venue_away_filtered_data)
+            
         with tab1_3:
             st.markdown('**Stats for selected teams**')
             header_columns = st.columns(3)
