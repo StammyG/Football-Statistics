@@ -503,7 +503,7 @@ with TabA:
     st.write("")
     st.write("Disclaimer: All stats that are used in tabs: Team stats for Top 5 and Yellow Cards outside the top 5 Leagues are provided by FBref and the rest are provided by Sofascore")
 
-#with TabB:
+with TabB:
     st.title("Player Stats")
     players_team = player_stats['Team'].unique()
     
