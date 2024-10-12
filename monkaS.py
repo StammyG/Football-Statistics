@@ -11,7 +11,7 @@ from PIL import Image
 
 st.title('StammyApp')
 
-db_csv = "Top5_League_Stats_Updated11.csv"
+db_csv = "Top5_League_Stats_Updated12.csv"
 
 @st.cache_data
 def load_data(file_path):
