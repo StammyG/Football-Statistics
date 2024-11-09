@@ -380,7 +380,7 @@ with TabA:
     
             # Center the image by displaying it in the middle column
             with colIM2:
-                st.image("super_league_logo.jpg")
+                st.image("Sidiro.jpg")
     
             
             st.header('Filter Options')
