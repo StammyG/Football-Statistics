@@ -11,7 +11,7 @@ from PIL import Image
 
 st.title('StammyApp')
 
-db_csv = "Top5_League_Stats_Updated16.csv"
+db_csv = "Top5_League_Stats_Updated17.csv"
 
 @st.cache_data
 def load_data(file_path):
@@ -137,6 +137,9 @@ with TabA:
             write_stat_to_container(columns, "Fouls Commited", "Fouls_Commited", False)
             write_stat_to_container(columns, "Offsides", "Offsides", False)
             write_stat_to_container(columns, "Yellow Cards", "Yellow_Cards", False)
+            write_stat_to_container(columns, "Throw-Ins", "Throw_Ins", False)
+            write_stat_to_container(columns, "Corner Kicks", "Corner_Kicks", False)
+            write_stat_to_container(columns, "Passes", "Total_Passes", False)
             write_stat_to_container(columns, "xG", "xG", False)
         
         st.write("") 
@@ -157,6 +160,9 @@ with TabA:
             write_stat_to_container(against_columns, "Fouls Commited", "Fouls_Commited", True)
             write_stat_to_container(against_columns, "Offsides", "Offsides", True)
             write_stat_to_container(against_columns, "Yellow Cards", "Yellow_Cards", True)
+            write_stat_to_container(against_columns, "Throw-Ins", "Throw_Ins", True)
+            write_stat_to_container(against_columns, "Corner Kicks", "Corner_Kicks", True)
+            write_stat_to_container(against_columns, "Passes", "Total_Passes", True)
             write_stat_to_container(against_columns, "xG", "xG", True)
     
         st.write("") 
