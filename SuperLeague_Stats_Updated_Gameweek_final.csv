@@ -1487,31 +1487,59 @@ MGS Panserraikos,PAS Lamia 1964,Home,For,0,4,19,2,17,4,15,18,0,6,2,Gameweek 19,2
 MGS Panserraikos,PAS Lamia 1964,Home,Against,0,3,15,3,9,15,25,18,1,1,0,Gameweek 19,2025,,
 PAS Lamia 1964,MGS Panserraikos,Away,For,0,3,15,3,9,15,25,18,1,1,0,Gameweek 19,2025,,
 PAS Lamia 1964,MGS Panserraikos,Away,Against,0,4,19,2,17,4,15,18,0,6,2,Gameweek 19,2025,,
-NPS Volos,Atromitos Athens,Home,For,0,4,23,5,9,9,19,7,1,2,1,Gameweek 20,2025,,0.0
-NPS Volos,Atromitos Athens,Home,Against,1,2,21,3,6,6,14,13,0,2,3,Gameweek 20,2025,,1.0
-Atromitos Athens,NPS Volos,Away,For,1,2,21,3,6,6,14,13,0,2,3,Gameweek 20,2025,,2.0
-Atromitos Athens,NPS Volos,Away,Against,0,4,23,5,9,9,19,7,1,2,1,Gameweek 20,2025,,3.0
-Asteras Aktor,Athens Kallithea FC,Home,For,0,7,15,3,15,8,22,17,1,5,0,Gameweek 20,2025,,4.0
-Asteras Aktor,Athens Kallithea FC,Home,Against,1,3,8,3,8,7,24,7,1,3,1,Gameweek 20,2025,,5.0
-Athens Kallithea FC,Asteras Aktor,Away,For,1,3,8,3,8,7,24,7,1,3,1,Gameweek 20,2025,,6.0
-Athens Kallithea FC,Asteras Aktor,Away,Against,0,7,15,3,15,8,22,17,1,5,0,Gameweek 20,2025,,7.0
-OFI Crete,MGS Panserraikos,Home,For,1,9,14,7,23,7,20,14,0,10,1,Gameweek 20,2025,,8.0
-OFI Crete,MGS Panserraikos,Home,Against,0,8,16,4,16,9,14,21,1,5,2,Gameweek 20,2025,,9.0
-MGS Panserraikos,OFI Crete,Away,For,0,8,16,4,16,9,14,21,1,5,2,Gameweek 20,2025,,10.0
-MGS Panserraikos,OFI Crete,Away,Against,1,9,14,7,23,7,20,14,0,10,1,Gameweek 20,2025,,11.0
-AEK Athens,Panetolikos,Home,For,0,7,15,1,15,5,15,12,0,4,5,Gameweek 20,2025,,12.0
-AEK Athens,Panetolikos,Home,Against,0,4,8,3,5,13,14,16,1,1,0,Gameweek 20,2025,,13.0
-Panetolikos,AEK Athens,Away,For,0,4,8,3,5,13,14,16,1,1,0,Gameweek 20,2025,,14.0
-Panetolikos,AEK Athens,Away,Against,0,7,15,1,15,5,15,12,0,4,5,Gameweek 20,2025,,15.0
-PAS Lamia 1964,Aris Thessaloniki,Home,For,1,3,7,1,5,8,23,21,0,1,2,Gameweek 20,2025,,16.0
-PAS Lamia 1964,Aris Thessaloniki,Home,Against,0,7,16,2,18,6,27,15,0,8,1,Gameweek 20,2025,,17.0
-Aris Thessaloniki,PAS Lamia 1964,Away,For,0,7,16,2,18,6,27,15,0,8,1,Gameweek 20,2025,,18.0
-Aris Thessaloniki,PAS Lamia 1964,Away,Against,1,3,7,1,5,8,23,21,0,1,2,Gameweek 20,2025,,19.0
-PAOK,APO Levadiakos,Home,For,0,10,10,0,13,7,28,14,0,1,3,Gameweek 20,2025,,20.0
-PAOK,APO Levadiakos,Home,Against,0,3,11,4,10,9,24,17,2,5,0,Gameweek 20,2025,,21.0
-APO Levadiakos,PAOK,Away,For,0,3,11,4,10,9,24,17,2,5,0,Gameweek 20,2025,,22.0
-APO Levadiakos,PAOK,Away,Against,0,10,10,0,13,7,28,14,0,1,3,Gameweek 20,2025,,23.0
-Olympiacos FC,Panathinaikos,Home,For,1,2,17,3,12,4,23,26,1,4,1,Gameweek 20,2025,,24.0
-Olympiacos FC,Panathinaikos,Home,Against,1,2,17,7,8,6,21,23,2,4,0,Gameweek 20,2025,,25.0
-Panathinaikos,Olympiacos FC,Away,For,1,2,17,7,8,6,21,23,2,4,0,Gameweek 20,2025,,26.0
-Panathinaikos,Olympiacos FC,Away,Against,1,2,17,3,12,4,23,26,1,4,1,Gameweek 20,2025,,27.0
+NPS Volos,Atromitos Athens,Home,For,0,4,23,5,9,9,19,7,1,2,1,Gameweek 20,2025,,
+NPS Volos,Atromitos Athens,Home,Against,1,2,21,3,6,6,14,13,0,2,3,Gameweek 20,2025,,
+Atromitos Athens,NPS Volos,Away,For,1,2,21,3,6,6,14,13,0,2,3,Gameweek 20,2025,,
+Atromitos Athens,NPS Volos,Away,Against,0,4,23,5,9,9,19,7,1,2,1,Gameweek 20,2025,,
+Asteras Aktor,Athens Kallithea FC,Home,For,0,7,15,3,15,8,22,17,1,5,0,Gameweek 20,2025,,
+Asteras Aktor,Athens Kallithea FC,Home,Against,1,3,8,3,8,7,24,7,1,3,1,Gameweek 20,2025,,
+Athens Kallithea FC,Asteras Aktor,Away,For,1,3,8,3,8,7,24,7,1,3,1,Gameweek 20,2025,,
+Athens Kallithea FC,Asteras Aktor,Away,Against,0,7,15,3,15,8,22,17,1,5,0,Gameweek 20,2025,,
+OFI Crete,MGS Panserraikos,Home,For,1,9,14,7,23,7,20,14,0,10,1,Gameweek 20,2025,,
+OFI Crete,MGS Panserraikos,Home,Against,0,8,16,4,16,9,14,21,1,5,2,Gameweek 20,2025,,
+MGS Panserraikos,OFI Crete,Away,For,0,8,16,4,16,9,14,21,1,5,2,Gameweek 20,2025,,
+MGS Panserraikos,OFI Crete,Away,Against,1,9,14,7,23,7,20,14,0,10,1,Gameweek 20,2025,,
+AEK Athens,Panetolikos,Home,For,0,7,15,1,15,5,15,12,0,4,5,Gameweek 20,2025,,
+AEK Athens,Panetolikos,Home,Against,0,4,8,3,5,13,14,16,1,1,0,Gameweek 20,2025,,
+Panetolikos,AEK Athens,Away,For,0,4,8,3,5,13,14,16,1,1,0,Gameweek 20,2025,,
+Panetolikos,AEK Athens,Away,Against,0,7,15,1,15,5,15,12,0,4,5,Gameweek 20,2025,,
+PAS Lamia 1964,Aris Thessaloniki,Home,For,1,3,7,1,5,8,23,21,0,1,2,Gameweek 20,2025,,
+PAS Lamia 1964,Aris Thessaloniki,Home,Against,0,7,16,2,18,6,27,15,0,8,1,Gameweek 20,2025,,
+Aris Thessaloniki,PAS Lamia 1964,Away,For,0,7,16,2,18,6,27,15,0,8,1,Gameweek 20,2025,,
+Aris Thessaloniki,PAS Lamia 1964,Away,Against,1,3,7,1,5,8,23,21,0,1,2,Gameweek 20,2025,,
+PAOK,APO Levadiakos,Home,For,0,10,10,0,13,7,28,14,0,1,3,Gameweek 20,2025,,
+PAOK,APO Levadiakos,Home,Against,0,3,11,4,10,9,24,17,2,5,0,Gameweek 20,2025,,
+APO Levadiakos,PAOK,Away,For,0,3,11,4,10,9,24,17,2,5,0,Gameweek 20,2025,,
+APO Levadiakos,PAOK,Away,Against,0,10,10,0,13,7,28,14,0,1,3,Gameweek 20,2025,,
+Olympiacos FC,Panathinaikos,Home,For,1,2,17,3,12,4,23,26,1,4,1,Gameweek 20,2025,,
+Olympiacos FC,Panathinaikos,Home,Against,1,2,17,7,8,6,21,23,2,4,0,Gameweek 20,2025,,
+Panathinaikos,Olympiacos FC,Away,For,1,2,17,7,8,6,21,23,2,4,0,Gameweek 20,2025,,
+Panathinaikos,Olympiacos FC,Away,Against,1,2,17,3,12,4,23,26,1,4,1,Gameweek 20,2025,,
+Panathinaikos,OFI Crete,Home,For,0,13,10,1,20,5,25,5,0,10,4,Gameweek 21,2025,,0.0
+Panathinaikos,OFI Crete,Home,Against,0,1,11,1,8,13,12,24,1,5,0,Gameweek 21,2025,,1.0
+OFI Crete,Panathinaikos,Away,For,0,1,11,1,8,13,12,24,1,5,0,Gameweek 21,2025,,2.0
+OFI Crete,Panathinaikos,Away,Against,0,13,10,1,20,5,25,5,0,10,4,Gameweek 21,2025,,3.0
+MGS Panserraikos,NPS Volos,Home,For,0,4,14,6,8,7,24,12,3,4,0,Gameweek 21,2025,,4.0
+MGS Panserraikos,NPS Volos,Home,Against,0,4,17,5,13,8,18,14,3,5,0,Gameweek 21,2025,,5.0
+NPS Volos,MGS Panserraikos,Away,For,0,4,17,5,13,8,18,14,3,5,0,Gameweek 21,2025,,6.0
+NPS Volos,MGS Panserraikos,Away,Against,0,4,14,6,8,7,24,12,3,4,0,Gameweek 21,2025,,7.0
+APO Levadiakos,Olympiacos FC,Home,For,0,3,11,4,7,14,26,20,2,3,1,Gameweek 21,2025,,8.0
+APO Levadiakos,Olympiacos FC,Home,Against,0,6,9,1,14,3,37,14,1,3,1,Gameweek 21,2025,,9.0
+Olympiacos FC,APO Levadiakos,Away,For,0,6,9,1,14,3,37,14,1,3,1,Gameweek 21,2025,,10.0
+Olympiacos FC,APO Levadiakos,Away,Against,0,3,11,4,7,14,26,20,2,3,1,Gameweek 21,2025,,11.0
+Athens Kallithea FC,Aris Thessaloniki,Home,For,0,10,15,4,16,9,19,13,0,1,1,Gameweek 21,2025,,12.0
+Athens Kallithea FC,Aris Thessaloniki,Home,Against,0,4,20,3,11,6,19,17,1,1,2,Gameweek 21,2025,,13.0
+Aris Thessaloniki,Athens Kallithea FC,Away,For,0,4,20,3,11,6,19,17,1,1,2,Gameweek 21,2025,,14.0
+Aris Thessaloniki,Athens Kallithea FC,Away,Against,0,10,15,4,16,9,19,13,0,1,1,Gameweek 21,2025,,15.0
+PAOK,AEK Athens,Home,For,0,3,10,3,10,6,27,21,2,5,2,Gameweek 21,2025,,16.0
+PAOK,AEK Athens,Home,Against,0,3,13,8,15,6,22,16,3,6,1,Gameweek 21,2025,,17.0
+AEK Athens,PAOK,Away,For,0,3,13,8,15,6,22,16,3,6,1,Gameweek 21,2025,,18.0
+AEK Athens,PAOK,Away,Against,0,3,10,3,10,6,27,21,2,5,2,Gameweek 21,2025,,19.0
+Panetolikos,Atromitos Athens,Home,For,1,0,13,4,4,11,20,11,0,0,1,Gameweek 21,2025,,20.0
+Panetolikos,Atromitos Athens,Home,Against,0,5,21,2,20,9,24,27,0,8,3,Gameweek 21,2025,,21.0
+Atromitos Athens,Panetolikos,Away,For,0,5,21,2,20,9,24,27,0,8,3,Gameweek 21,2025,,22.0
+Atromitos Athens,Panetolikos,Away,Against,1,0,13,4,4,11,20,11,0,0,1,Gameweek 21,2025,,23.0
+Asteras Aktor,PAS Lamia 1964,Home,For,1,3,14,2,11,10,18,20,0,3,0,Gameweek 21,2025,,24.0
+Asteras Aktor,PAS Lamia 1964,Home,Against,1,4,20,4,9,6,24,16,1,1,0,Gameweek 21,2025,,25.0
+PAS Lamia 1964,Asteras Aktor,Away,For,1,4,20,4,9,6,24,16,1,1,0,Gameweek 21,2025,,26.0
+PAS Lamia 1964,Asteras Aktor,Away,Against,1,3,14,2,11,10,18,20,0,3,0,Gameweek 21,2025,,27.0
