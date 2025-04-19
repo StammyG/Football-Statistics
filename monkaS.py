@@ -11,13 +11,14 @@ from PIL import Image
 
 st.title('StammyApp')
 
-db_csv = "Top5_League_Stats_Updated44.csv"
+#db_csv = "Top5_League_Stats_Updated44.csv"
 
 @st.cache_data
 def load_data(file_path):
     return pd.read_csv(file_path)
 
-data = load_data(db_csv)
+#data = load_data(db_csv)
+data = pd.read_csv("Top5_League_Stats_Updated44.csv")
 YellowCards_Data = pd.read_csv("SusLeagues_Cards_2024_2.csv")
 SuperLeague_Data = pd.read_csv('SuperLeague_Stats_Updated_Gameweek_final.csv')
 data['Season'] = data['Season'].astype(str)
