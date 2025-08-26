@@ -493,7 +493,7 @@ with TabA:
             st.write("")
                 
     
-            tab3_1, tab3_2, tab3_3 = st.tabs(["Home Data", "Away Data","TEST"])
+            tab3_1, tab3_2= st.tabs(["Home Data", "Away Data","TEST"])
         
             with tab3_1:
                 st.write("Home Data")
@@ -503,9 +503,7 @@ with TabA:
                 st.write("Away Data")
                 st.dataframe(superleague_venue_away_filtered_data)
 
-            with tab3_3:
-                st.write("SuperLeague_Data")
-                ST.DATAFRAME(SuperLeague_Data)
+            
     
     st.write("")
     st.write("")
@@ -557,6 +555,7 @@ with TabB:
     
 
    
+
 
 
 
