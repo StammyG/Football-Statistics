@@ -25,7 +25,7 @@ data['Season'] = data['Season'].astype(str)
 data.loc[data['ForAgainst'] == 'Against', 'Venue'] = data.loc[data['ForAgainst'] == 'Against', 'Venue'].map({'Home': 'Away', 'Away': 'Home'})
 
 YellowCards_Data['Season'] = YellowCards_Data['Season'].astype(str)
-#SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
+SuperLeague_Data['Season'] = SuperLeague_Data['Season'].astype(str)
 YellowCards_Data.loc[YellowCards_Data['ForAgainst'] == 'Against', 'Venue'] = YellowCards_Data.loc[YellowCards_Data['ForAgainst'] == 'Against', 'Venue'].map({'Home': 'Away', 'Away': 'Home'})
 
 
@@ -695,6 +695,7 @@ with TabB:
     
 
    
+
 
 
 
