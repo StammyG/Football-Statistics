@@ -502,6 +502,10 @@ with TabA:
             with tab3_2:
                 st.write("Away Data")
                 st.dataframe(superleague_venue_away_filtered_data)
+
+            with tab3_3:
+                st.write("SuperLeague_Data")
+                ST.DATAFRAME(SuperLeague_Data)
     
     st.write("")
     st.write("")
@@ -691,5 +695,6 @@ with TabB:
     
 
    
+
 
 
