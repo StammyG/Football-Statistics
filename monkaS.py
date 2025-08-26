@@ -20,7 +20,7 @@ def load_data(file_path):
 #data = load_data(db_csv)
 data = pd.read_csv("Top5_League_Stats_Updated44.csv")
 YellowCards_Data = pd.read_csv("SusLeagues_Cards_2025_2.csv")
-SuperLeague_Data = pd.read_csv('SuperLeague_Stats_Updated_Gameweek_final.csv')
+SuperLeague_Data = pd.read_csv('SuperLeague_Stats_Updated_Gameweek_final_2.csv')
 data['Season'] = data['Season'].astype(str)
 data.loc[data['ForAgainst'] == 'Against', 'Venue'] = data.loc[data['ForAgainst'] == 'Against', 'Venue'].map({'Home': 'Away', 'Away': 'Home'})
 
@@ -691,3 +691,4 @@ with TabB:
     
 
    
+
