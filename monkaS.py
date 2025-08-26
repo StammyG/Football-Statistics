@@ -516,145 +516,7 @@ with TabA:
 
 with TabB:
     st.title("Player Stats")
-    players_team = player_stats['Team'].unique()
-    
-    colB1, colB2 = st.columns([1, 1])  # Adjust these values to control the width ratio
-    
-    with colB1:
-        player_competition = st.selectbox('Select Competition',options =[comp for comp in player_stats['Competition'].unique() if pd.notna(comp)],key="team_competition")
-        team_competition = player_stats[player_stats['Competition']== player_competition]
-        season = st.multiselect('Select Season for player Stats', options=team_competition['Season'].unique(),key='player_season')
-        player_team = st.selectbox('Select Team',options=team_competition['Team'].unique(), key= "team_roster" )
-        
-
-        
-    team_roster = player_stats[(player_stats['Team'] == player_team) & (player_stats['Season'].isin(season))]
-    filtered_team_roster = team_roster[team_roster['minutes']>10]
-    player_id_counts = filtered_team_roster['player_id'].value_counts()
-    filtered_team_roster['Importance'] = (90*filtered_team_roster.groupby('player_id')['SoT'].transform('mean'))+(4*filtered_team_roster['player_id'].map(player_id_counts)) + (0.25*filtered_team_roster.groupby('player_id')['minutes'].transform('mean'))
-    unique_roster = filtered_team_roster.drop_duplicates(subset=['player_id'])
-    unique_roster = unique_roster.sort_values(by='Importance', ascending=False)
-    
-    num_rows_slider = st.number_input('Last _ Matches:', 
-                           min_value=1, 
-                           max_value=150, 
-                           value=150, 
-                           step=1,key="slider")
-    filtered_team_roster['chronological_order'] = filtered_team_roster['Season'] + (0.01*filtered_team_roster['round'])
-    filtered_team_roster=filtered_team_roster.sort_values(by='chronological_order', ascending=False)
-    supremacy = st.number_input('Supremacy:', 
-                            
-                           
-                           
-                           step=0.05,key="supremacy")
-    totals = st.number_input('Totals:', 
-                            
-                           
-                           step=0.05,key="Totals")
-    def calculate_average_stats(player_id):
-        player_data = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-        player_data = player_data.head(num_rows_slider)
-        avg_stats = player_data[['SoT', 'Shots', 'fouls_commited', 'fouls_received','Tackles','Goals','Assists',"minutes"]].mean()
-        
-        return avg_stats
-    def calculate_suggested_totals_shots(player_id):
-        avg_stats = calculate_average_stats(player_id)
-        suggested_shots = avg_stats['Shots'] +((avg_stats['Shots']*supremacy)/totals)
-
-        return suggested_shots
-    
-    # Streamlit app layout
-    st.subheader(f'{player_team} Roster')
-    
-    # Create a layout with columns for player name and stats
-   
-            
-    st.markdown("""
-        <style>
-        
-        
-        .player-stats {
-            border: 2px solid #FF5733;
-            border-radius: 5px;
-            padding: 10px;
-            margin-top: 5px;
-            background-color: #FFFFFF;
-        }
-        
-        </style>
-    """, unsafe_allow_html=True)
-  
-    TabB5,TabB6 = st.tabs(["Player Average","Suggested Totals"])
-    with TabB5:
-        for _, player in unique_roster.iterrows():
-            player_id = player['player_id']
-            player_name = player['Sofascore_Name']
-            
-            
-            # Create columns for player name and stats
-            # Create columns for player name and stats
-            
-            avg_stats = calculate_average_stats(player_id)
-            
-            st.markdown(f"""
-                    <div class='player-stats'>
-                        <div style='font-size:14px; margin-top:0.5px;'>
-                            <div style='display: flex; flex-wrap: wrap; gap: 8px;'>
-                                <div style='font-size:17px;color:black;'><strong></strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{player_name}</span></div>
-                                <div style='font-size:14px;color:black;'><strong>Minutes:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['minutes']:.2f}</span></div>
-                                <div style='font-size:14px;color:black;'><strong>Shots on Target:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['SoT']:.2f}</span></div>
-                                <div style='font-size:14px;color:black;'><strong>Shots:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Shots']:.2f}</span></div>
-                                <div style='font-size:14px;color:black;'><strong>Fouls Commited:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_commited']:.2f}</span></div>
-                                <div style='font-size:14px;color:black;'><strong>Fouls Received:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_received']:.2f}</span></div>
-                                <div style='font-size:14px;color:black;'><strong>Tackles:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
-                                <div style='font-size:14px;color:black;'><strong>Goals:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Goals']:.2f}</span></div>
-                                <div style='font-size:14px;color:black;'><strong>Assists:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Assists']:.2f}</span></div>
-            
-              
-                            
-                        
-                         
-                    """, unsafe_allow_html=True)
-               
-            with st.expander(f"Show all matches that {player_name} featured in"):
-                 player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-                 player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)   
-                 st.write(player_matches)
-    with TabB6:    
-        for _, player in unique_roster.iterrows():
-            player_id = player['player_id']
-            player_name = player['Sofascore_Name']
-                
-                
-                # Create columns for player name and stats
-                # Create columns for player name and stats
-                
-            avg_stats = calculate_average_stats(player_id)
-            suggested_shots = calculate_suggested_totals_shots(player_id)
-            st.markdown(f"""
-                        <div class='player-stats'>
-                            <div style='font-size:14px; margin-top:0.5px;'>
-                                <div style='display: flex; flex-wrap: wrap; gap: 8px;'>
-                                    <div style='font-size:17px;color:black;'><strong></strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{player_name}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Minutes:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['minutes']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Shots on Target:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['SoT']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Shots:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{suggested_shots:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Fouls Commited:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_commited']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Fouls Received:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['fouls_received']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Tackles:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Tackles']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Goals:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Goals']:.2f}</span></div>
-                                    <div style='font-size:14px;color:black;'><strong>Assists:</strong> <span style='color:#000000; font-size:17px; font-weight:bold;'>{avg_stats['Assists']:.2f}</span></div>
-                
-                  
-                                
-                            
-                            
-                    """, unsafe_allow_html=True)
-                   
-            with st.expander(f"Show all matches that {player_name} featured in"):
-                    player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id]
-                    player_matches = filtered_team_roster[filtered_team_roster['player_id'] == player_id].head(num_rows_slider)   
-                    st.write(player_matches)
+    st.write("UNDER CONSTRUCTION")    
 
        
 
@@ -695,6 +557,7 @@ with TabB:
     
 
    
+
 
 
 
