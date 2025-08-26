@@ -493,7 +493,7 @@ with TabA:
             st.write("")
                 
     
-            tab3_1, tab3_2= st.tabs(["Home Data", "Away Data","TEST"])
+            tab3_1, tab3_2= st.tabs(["Home Data", "Away Data"])
         
             with tab3_1:
                 st.write("Home Data")
@@ -555,6 +555,7 @@ with TabB:
     
 
    
+
 
 
 
