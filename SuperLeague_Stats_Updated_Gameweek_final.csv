@@ -2123,10 +2123,10 @@ Aris Thessaloniki,AEK Athens,Home,For,0.0,7.0,18.0,3.0,10.0,8.0,15.0,17.0,1.0,4.
 Aris Thessaloniki,AEK Athens,Home,Against,0.0,6.0,14.0,2.0,11.0,2.0,19.0,19.0,2.0,3.0,1.0,Gameweek 16,2026,,
 AEK Athens,Aris Thessaloniki,Away,For,0.0,6.0,14.0,2.0,11.0,2.0,19.0,19.0,2.0,3.0,1.0,Gameweek 16,2026,,
 AEK Athens,Aris Thessaloniki,Away,Against,0.0,7.0,18.0,3.0,10.0,8.0,15.0,17.0,1.0,4.0,1.0,Gameweek 16,2026,,
-Panathinaikos FC,MGS Panserraikos,Home,For,0.0,10.0,13.0,1.0,19.0,5.0,16.0,8.0,0.0,10.0,0.0,Gameweek 16,2026,,
-Panathinaikos FC,MGS Panserraikos,Home,Against,1.0,1.0,12.0,5.0,4.0,10.0,20.0,14.0,3.0,2.0,4.0,Gameweek 16,2026,,
-MGS Panserraikos,Panathinaikos FC,Away,For,1.0,1.0,12.0,5.0,4.0,10.0,20.0,14.0,3.0,2.0,4.0,Gameweek 16,2026,,
-MGS Panserraikos,Panathinaikos FC,Away,Against,0.0,10.0,13.0,1.0,19.0,5.0,16.0,8.0,0.0,10.0,0.0,Gameweek 16,2026,,
+Panathinaikos,MGS Panserraikos,Home,For,0.0,10.0,13.0,1.0,19.0,5.0,16.0,8.0,0.0,10.0,0.0,Gameweek 16,2026,,
+Panathinaikos,MGS Panserraikos,Home,Against,1.0,1.0,12.0,5.0,4.0,10.0,20.0,14.0,3.0,2.0,4.0,Gameweek 16,2026,,
+MGS Panserraikos,Panathinaikos,Away,For,1.0,1.0,12.0,5.0,4.0,10.0,20.0,14.0,3.0,2.0,4.0,Gameweek 16,2026,,
+MGS Panserraikos,Panathinaikos,Away,Against,0.0,10.0,13.0,1.0,19.0,5.0,16.0,8.0,0.0,10.0,0.0,Gameweek 16,2026,,
 MGS Panserraikos,AE Kifisia,Home,For,0.0,7.0,22.0,4.0,16.0,3.0,21.0,20.0,0.0,12.0,5.0,Gameweek 17,2026,,
 MGS Panserraikos,AE Kifisia,Home,Against,0.0,3.0,17.0,4.0,8.0,3.0,24.0,17.0,0.0,3.0,1.0,Gameweek 17,2026,,
 AE Kifisia,MGS Panserraikos,Away,For,0.0,3.0,17.0,4.0,8.0,3.0,24.0,17.0,0.0,3.0,1.0,Gameweek 17,2026,,
@@ -2139,10 +2139,10 @@ PAOK,OFI Crete,Home,For,0.0,6.0,14.0,1.0,13.0,4.0,18.0,7.0,0.0,6.0,1.0,Gameweek 
 PAOK,OFI Crete,Home,Against,0.0,0.0,8.0,3.0,3.0,8.0,13.0,13.0,2.0,1.0,2.0,Gameweek 17,2026,,
 OFI Crete,PAOK,Away,For,0.0,0.0,8.0,3.0,3.0,8.0,13.0,13.0,2.0,1.0,2.0,Gameweek 17,2026,,
 OFI Crete,PAOK,Away,Against,0.0,6.0,14.0,1.0,13.0,4.0,18.0,7.0,0.0,6.0,1.0,Gameweek 17,2026,,
-AEK Athens,Panathinaikos FC,Home,For,0.0,2.0,17.0,1.0,12.0,6.0,15.0,19.0,0.0,5.0,1.0,Gameweek 17,2026,,
-AEK Athens,Panathinaikos FC,Home,Against,0.0,3.0,13.0,1.0,12.0,9.0,22.0,8.0,1.0,3.0,0.0,Gameweek 17,2026,,
-Panathinaikos FC,AEK Athens,Away,For,0.0,3.0,13.0,1.0,12.0,9.0,22.0,8.0,1.0,3.0,0.0,Gameweek 17,2026,,
-Panathinaikos FC,AEK Athens,Away,Against,0.0,2.0,17.0,1.0,12.0,6.0,15.0,19.0,0.0,5.0,1.0,Gameweek 17,2026,,
+AEK Athens,Panathinaikos,Home,For,0.0,2.0,17.0,1.0,12.0,6.0,15.0,19.0,0.0,5.0,1.0,Gameweek 17,2026,,
+AEK Athens,Panathinaikos,Home,Against,0.0,3.0,13.0,1.0,12.0,9.0,22.0,8.0,1.0,3.0,0.0,Gameweek 17,2026,,
+Panathinaikos,AEK Athens,Away,For,0.0,3.0,13.0,1.0,12.0,9.0,22.0,8.0,1.0,3.0,0.0,Gameweek 17,2026,,
+Panathinaikos,AEK Athens,Away,Against,0.0,2.0,17.0,1.0,12.0,6.0,15.0,19.0,0.0,5.0,1.0,Gameweek 17,2026,,
 GFS Panetolikos,APO Levadiakos,Home,For,0.0,6.0,14.0,2.0,16.0,2.0,21.0,16.0,2.0,3.0,0.0,Gameweek 17,2026,,
 GFS Panetolikos,APO Levadiakos,Home,Against,0.0,5.0,13.0,1.0,11.0,10.0,20.0,20.0,0.0,6.0,1.0,Gameweek 17,2026,,
 APO Levadiakos,GFS Panetolikos,Away,For,0.0,5.0,13.0,1.0,11.0,10.0,20.0,20.0,0.0,6.0,1.0,Gameweek 17,2026,,
@@ -2175,10 +2175,10 @@ OFI Crete,GFS Panetolikos,Home,For,0.0,4.0,16.0,1.0,14.0,7.0,12.0,11.0,1.0,5.0,0
 OFI Crete,GFS Panetolikos,Home,Against,1.0,5.0,13.0,3.0,11.0,9.0,22.0,5.0,1.0,5.0,3.0,Gameweek 18,2026,,
 GFS Panetolikos,OFI Crete,Away,For,1.0,5.0,13.0,3.0,11.0,9.0,22.0,5.0,1.0,5.0,3.0,Gameweek 18,2026,,
 GFS Panetolikos,OFI Crete,Away,Against,0.0,4.0,16.0,1.0,14.0,7.0,12.0,11.0,1.0,5.0,0.0,Gameweek 18,2026,,
-APS Atromitos Athinon,Panathinaikos FC,Home,For,0.0,1.0,16.0,2.0,11.0,7.0,16.0,14.0,0.0,4.0,0.0,Gameweek 18,2026,,
-APS Atromitos Athinon,Panathinaikos FC,Home,Against,0.0,2.0,17.0,2.0,9.0,5.0,31.0,11.0,1.0,3.0,1.0,Gameweek 18,2026,,
-Panathinaikos FC,APS Atromitos Athinon,Away,For,0.0,2.0,17.0,2.0,9.0,5.0,31.0,11.0,1.0,3.0,1.0,Gameweek 18,2026,,
-Panathinaikos FC,APS Atromitos Athinon,Away,Against,0.0,1.0,16.0,2.0,11.0,7.0,16.0,14.0,0.0,4.0,0.0,Gameweek 18,2026,,
+APS Atromitos Athinon,Panathinaikos,Home,For,0.0,1.0,16.0,2.0,11.0,7.0,16.0,14.0,0.0,4.0,0.0,Gameweek 18,2026,,
+APS Atromitos Athinon,Panathinaikos,Home,Against,0.0,2.0,17.0,2.0,9.0,5.0,31.0,11.0,1.0,3.0,1.0,Gameweek 18,2026,,
+Panathinaikos,APS Atromitos Athinon,Away,For,0.0,2.0,17.0,2.0,9.0,5.0,31.0,11.0,1.0,3.0,1.0,Gameweek 18,2026,,
+Panathinaikos,APS Atromitos Athinon,Away,Against,0.0,1.0,16.0,2.0,11.0,7.0,16.0,14.0,0.0,4.0,0.0,Gameweek 18,2026,,
 GFS Panetolikos,Aris Thessaloniki,Home,For,1.0,1.0,12.0,1.0,1.0,13.0,23.0,7.0,0.0,1.0,0.0,Gameweek 19,2026,,
 GFS Panetolikos,Aris Thessaloniki,Home,Against,0.0,5.0,19.0,2.0,22.0,3.0,17.0,8.0,0.0,7.0,1.0,Gameweek 19,2026,,
 Aris Thessaloniki,GFS Panetolikos,Away,For,0.0,5.0,19.0,2.0,22.0,3.0,17.0,8.0,0.0,7.0,1.0,Gameweek 19,2026,,
@@ -2195,10 +2195,10 @@ APO Levadiakos,Asteras Aktor,Home,For,0.0,3.0,18.0,3.0,10.0,12.0,19.0,13.0,1.0,4
 APO Levadiakos,Asteras Aktor,Home,Against,0.0,6.0,22.0,4.0,18.0,5.0,28.0,6.0,2.0,5.0,0.0,Gameweek 19,2026,,
 Asteras Aktor,APO Levadiakos,Away,For,0.0,6.0,22.0,4.0,18.0,5.0,28.0,6.0,2.0,5.0,0.0,Gameweek 19,2026,,
 Asteras Aktor,APO Levadiakos,Away,Against,0.0,3.0,18.0,3.0,10.0,12.0,19.0,13.0,1.0,4.0,0.0,Gameweek 19,2026,,
-Panathinaikos FC,AE Kifisia,Home,For,0.0,4.0,14.0,2.0,14.0,3.0,22.0,7.0,0.0,6.0,2.0,Gameweek 19,2026,,
-Panathinaikos FC,AE Kifisia,Home,Against,1.0,5.0,24.0,7.0,7.0,9.0,17.0,21.0,2.0,4.0,3.0,Gameweek 19,2026,,
-AE Kifisia,Panathinaikos FC,Away,For,1.0,5.0,24.0,7.0,7.0,9.0,17.0,21.0,2.0,4.0,3.0,Gameweek 19,2026,,
-AE Kifisia,Panathinaikos FC,Away,Against,0.0,4.0,14.0,2.0,14.0,3.0,22.0,7.0,0.0,6.0,2.0,Gameweek 19,2026,,
+Panathinaikos,AE Kifisia,Home,For,0.0,4.0,14.0,2.0,14.0,3.0,22.0,7.0,0.0,6.0,2.0,Gameweek 19,2026,,
+Panathinaikos,AE Kifisia,Home,Against,1.0,5.0,24.0,7.0,7.0,9.0,17.0,21.0,2.0,4.0,3.0,Gameweek 19,2026,,
+AE Kifisia,Panathinaikos,Away,For,1.0,5.0,24.0,7.0,7.0,9.0,17.0,21.0,2.0,4.0,3.0,Gameweek 19,2026,,
+AE Kifisia,Panathinaikos,Away,Against,0.0,4.0,14.0,2.0,14.0,3.0,22.0,7.0,0.0,6.0,2.0,Gameweek 19,2026,,
 PAOK,MGS Panserraikos,Home,For,0.0,6.0,7.0,0.0,13.0,3.0,26.0,5.0,0.0,6.0,0.0,Gameweek 19,2026,,
 PAOK,MGS Panserraikos,Home,Against,0.0,1.0,9.0,0.0,5.0,11.0,22.0,14.0,0.0,1.0,2.0,Gameweek 19,2026,,
 MGS Panserraikos,PAOK,Away,For,0.0,1.0,9.0,0.0,5.0,11.0,22.0,14.0,0.0,1.0,2.0,Gameweek 19,2026,,
@@ -2231,7 +2231,7 @@ Aris Thessaloniki,PAOK,Home,For,0.0,4.0,12.0,4.0,8.0,13.0,21.0,6.0,2.0,2.0,3.0,G
 Aris Thessaloniki,PAOK,Home,Against,0.0,4.0,10.0,3.0,13.0,7.0,22.0,10.0,2.0,4.0,2.0,Gameweek 20,2026,,21.0
 PAOK,Aris Thessaloniki,Away,For,0.0,4.0,10.0,3.0,13.0,7.0,22.0,10.0,2.0,4.0,2.0,Gameweek 20,2026,,22.0
 PAOK,Aris Thessaloniki,Away,Against,0.0,4.0,12.0,4.0,8.0,13.0,21.0,6.0,2.0,2.0,3.0,Gameweek 20,2026,,23.0
-Olympiacos FC,Panathinaikos FC,Home,For,0.0,3.0,15.0,1.0,15.0,7.0,27.0,19.0,0.0,3.0,2.0,Gameweek 20,2026,,24.0
-Olympiacos FC,Panathinaikos FC,Home,Against,0.0,3.0,14.0,3.0,8.0,8.0,22.0,16.0,0.0,4.0,2.0,Gameweek 20,2026,,25.0
-Panathinaikos FC,Olympiacos FC,Away,For,0.0,3.0,14.0,3.0,8.0,8.0,22.0,16.0,0.0,4.0,2.0,Gameweek 20,2026,,26.0
-Panathinaikos FC,Olympiacos FC,Away,Against,0.0,3.0,15.0,1.0,15.0,7.0,27.0,19.0,0.0,3.0,2.0,Gameweek 20,2026,,27.0
+Olympiacos FC,Panathinaikos,Home,For,0.0,3.0,15.0,1.0,15.0,7.0,27.0,19.0,0.0,3.0,2.0,Gameweek 20,2026,,24.0
+Olympiacos FC,Panathinaikos,Home,Against,0.0,3.0,14.0,3.0,8.0,8.0,22.0,16.0,0.0,4.0,2.0,Gameweek 20,2026,,25.0
+Panathinaikos,Olympiacos FC,Away,For,0.0,3.0,14.0,3.0,8.0,8.0,22.0,16.0,0.0,4.0,2.0,Gameweek 20,2026,,26.0
+Panathinaikos,Olympiacos FC,Away,Against,0.0,3.0,15.0,1.0,15.0,7.0,27.0,19.0,0.0,3.0,2.0,Gameweek 20,2026,,27.0
